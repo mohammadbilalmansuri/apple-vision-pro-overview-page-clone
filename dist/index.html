@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Vision Pro - Apple</title>
+    <meta
+      name="description"
+      content="Apple Vision Pro is Apple's first spatial computer. It seamlessly blends digital content with your physical space using revolutionary technology."
+    />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="w-full relative overflow-x-hidden text-black fill-black">
+    <div class="w-full relative">
+      <header
+        class="w-full h-[var(--header-height)] z-50 fixed top-0 left-0 flex flex-col items-center justify-center bg-extraLightGray/75 backdrop-saturate-150 backdrop-blur-xl"
+      >
+        <div
+          class="size-full max-w-screen-lg px-5 py-3.5 flex justify-between items-center gap-6"
+        >
+          <a href="/" class="leading-none text-xl font-semibold"
+            >Apple Vision Pro</a
+          >
+
+          <nav class="flex items-center gap-6">
+            <a class="nav-item nav-active">Overview</a>
+            <a
+              href="https://www.apple.com/apple-vision-pro/guided-tour/"
+              class="nav-item text-black/80 hover:text-black"
+              >Guided Tour</a
+            >
+            <a
+              href="https://www.apple.com/apple-vision-pro/specs/"
+              class="nav-item text-black/80 hover:text-black"
+              >Tech Specs</a
+            >
+            <a
+              href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
+              class="nav-item py-1 px-2.5 border rounded-full hover:bg-black hover:text-white transition-all"
+              >Book a demo</a
+            >
+            <a
+              href="https://www.apple.com/us/shop/goto/buy_vision/apple_vision_pro"
+              class="nav-item py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white transition-all"
+              >Buy</a
+            >
+          </nav>
+        </div>
+      </header>
+
+      <main class="w-full relative mt-[var(--header-height)]">
+        <section
+          id="hero"
+          class="w-full relative flex flex-col items-center overflow-hidden"
+        >
+          <div class="w-full height-full relative flex flex-col items-center">
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-gray">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24z"
+                />
+              </svg>
+            </button>
+
+            <video
+              id="hero-video"
+              src="./assets/videos/hero-video.mp4"
+              class="w-auto h-full object-contain"
+              muted
+              autoplay
+            ></video>
+          </div>
+
+          <div
+            class="absolute bottom-[6%] flex flex-col items-center gap-7 z-10 px-5"
+          >
+            <img
+              src="./assets/images/apple_vision_pro_logo.webp"
+              alt="Apple Vision Pro Logo"
+              class="max-w-96"
+            />
+
+            <div class="flex flex-col items-center gap-4">
+              <a
+                href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
+                class="group text-orange fill-orange leading-none text-2xl font-semibold flex items-center gap-1"
+              >
+                <span class="group-hover:underline -mt-0.5"> Book a demo</span>
+                <svg viewBox="0 0 320 512" class="size-5">
+                  <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                  />
+                </svg>
+              </a>
+
+              <a
+                href="https://www.apple.com/visionos/visionos-2/"
+                class="group text-orange fill-orange text-2xl leading-none font-semibold flex items-center gap-1"
+              >
+                <span class="group-hover:underline">
+                  Learn more about visionOS 2</span
+                >
+                <svg viewBox="0 0 320 512" class="size-5">
+                  <path
+                    d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="foundation"
+          class="w-full height-full relative flex flex-col items-center"
+        >
+          <div class="size-full bg-black relative flex flex-col items-center">
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-lightGray">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              id="foundation-video"
+              src="./assets/videos/foundation-video.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+          </div>
+
+          <div
+            id="foundation-content"
+            class="w-full max-w-screen-lg px-5 flex flex-col items-center gap-16 text-center text-white absolute z-10 top-full"
+          >
+            <h2 class="leading-[1.15] text-5xl font-bold">
+              Apple Vision Pro seamlessly blends digital content with your
+              physical space.
+            </h2>
+            <h2 class="leading-[1.15] text-5xl font-bold">
+              So you can work, watch, relive memories, and connect in ways never
+              before possible.
+            </h2>
+            <h2 class="leading-[1.15] text-5xl font-bold">
+              The era of spatial computing is here.
+            </h2>
+            <button
+              class="mt-5 text-orange fill-orange border-orange bg-transparent border-2 rounded-full py-3.5 px-7 text-xl flex items-center gap-2 hover:bg-orange hover:text-white hover:fill-white transition-all font-semibold"
+            >
+              <svg viewBox="0 0 512 512" class="size-5">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+              <span>Watch the film</span>
+            </button>
+          </div>
+
+          <div
+            id="intro"
+            class="w-full height-full flex flex-col items-center justify-center absolute z-10 top-full bg-white"
+          >
+            <div
+              id="intro-content"
+              class="w-full max-w-screen-lg flex flex-col items-center gap-10 px-5"
+            >
+              <img
+                src="./assets/images/apple_vision_pro_logo.webp"
+                alt="Apple Vision Pro Logo"
+                class="max-w-96"
+              />
+
+              <!-- <video
+                id="intro-video"
+                src="./assets/videos/intro-video.mp4"
+                class="w-full"
+                muted
+              ></video> -->
+
+              <canvas id="intro-canvas" class="w-full"></canvas>
+
+              <button
+                class="bg-transparent border-2 rounded-full py-3.5 px-7 text-xl flex items-center gap-2 hover:bg-black hover:text-white hover:fill-white transition-all font-semibold"
+              >
+                <svg viewBox="0 0 448 512" class="size-5">
+                  <path
+                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                  />
+                </svg>
+                <span>Take a closer look</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- <section
+          id="entertainment"
+          class="w-full relative flex flex-col items-center"
+        >
+          <div
+            class="w-full height-full bg-black relative flex flex-col items-center"
+          >
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-gray">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              id="entertainment-video"
+              src="./assets/videos/entertainment-video.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+          </div>
+        </section> -->
+
+        <div class="h-[300vh] bg-gray"></div>
+      </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

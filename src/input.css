@@ -1,0 +1,84 @@
+@tailwind base;
+@layer base {
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305509/applevisionpro/fonts/sf-pro-display-regular.woff2");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305509/applevisionpro/fonts/sf-pro-display-semibold.woff2");
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "SF Pro Display";
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305509/applevisionpro/fonts/sf-pro-display-bold.woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "SF Pro Text";
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305510/applevisionpro/fonts/sf-pro-text-light.woff2");
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "SF Pro Text";
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305510/applevisionpro/fonts/sf-pro-text-regular.woff2");
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "SF Pro Text";
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305511/applevisionpro/fonts/sf-pro-text-semibold.woff2");
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  * {
+    box-sizing: border-box;
+    font-family: "SF Pro Display", "SF Pro Text", sans-serif;
+  }
+
+  :root {
+    --header-height: 3.25rem;
+  }
+}
+
+@tailwind components;
+@layer components {
+  .nav-item {
+    @apply sf-pro-text text-xs;
+  }
+
+  .nav-active {
+    @apply text-black cursor-pointer relative;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -18px;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+    }
+  }
+
+  .height-full {
+    height: calc(100dvh - var(--header-height));
+  }
+}
+
+@tailwind utilities;
+@layer utilities {
+  .sf-pro-text {
+    font-family: "SF Pro Text", "SF Pro Display", sans-serif !important;
+  }
+
+  .w-inherit {
+    width: inherit;
+  }
+}
