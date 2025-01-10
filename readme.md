@@ -9,3 +9,4 @@ A pixel-perfect clone of the Apple Vision Pro homepage, showcasing every detail 
 - JavaScript
 - HTML5 Canvas
 - GSAP with ScrollTrigger
+- Lenis

@@ -1,4 +1,12 @@
+const lenis = new Lenis();
 gsap.registerPlugin(ScrollTrigger);
+lenis.on("scroll", ScrollTrigger.update);
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
 
 if ("scrollRestoration" in history) {
   history.scrollRestoration = "manual";
@@ -16,6 +24,13 @@ function debounce(func, wait) {
     timeout = setTimeout(() => func.apply(this, args), wait);
   };
 }
+
+window.addEventListener(
+  "resize",
+  debounce(() => {
+    window.location.reload();
+  }, 50)
+);
 
 function playVideo(videoElement, currentTime) {
   if (!(videoElement instanceof HTMLVideoElement)) {
@@ -91,6 +106,9 @@ document.querySelectorAll(".play-pause").forEach((button) => {
   });
 })();
 
+const headerHeight = getComputedStyle(document.querySelector("header")).height;
+console.log(headerHeight);
+
 // Foundation Section
 (() => {
   const foundationVideo = document.getElementById("foundation-video");
@@ -104,6 +122,7 @@ document.querySelectorAll(".play-pause").forEach((button) => {
 
   ScrollTrigger.create({
     trigger: "#foundation",
+    scroller: "body",
     start: "top 75%",
     end: "top 75%",
     onEnter: () =>
@@ -116,7 +135,8 @@ document.querySelectorAll(".play-pause").forEach((button) => {
     .timeline({
       scrollTrigger: {
         trigger: "#foundation",
-        start: "bottom bottom",
+        scroller: "body",
+        start: `top ${headerHeight}`,
         end: "top -190%",
         scrub: true,
         pin: true,
@@ -141,23 +161,82 @@ document.querySelectorAll(".play-pause").forEach((button) => {
       top: 0,
     });
 
-  // const introVideo = document.querySelector("#intro-video");
+  const introVideo = document.querySelector("#intro-video");
 
-  // if (!introVideo) {
-  //   console.error("Intro video not found");
-  //   return;
-  // }
+  if (!introVideo) {
+    console.error("Intro video not found");
+    return;
+  }
 
-  // ScrollTrigger.create({
-  //   trigger: "#intro-content",
-  //   start: "top top",
-  //   end: "top -75%",
-  //   scrub: true,
-  //   onUpdate: (self) => {
-  //     introVideo.currentTime = self.progress * introVideo.duration;
-  //   },
-  // });
+  ScrollTrigger.create({
+    trigger: "#intro-content",
+    scroller: "body",
+    start: "top top",
+    end: "top -75%",
+    scrub: true,
+    onUpdate: (self) => {
+      introVideo.currentTime = self.progress * introVideo.duration;
+    },
+  });
 })();
+
+function experienceVideoAnimation(sectionSelector) {
+  if (!sectionSelector) {
+    console.error("Section selector not provided");
+    return;
+  }
+
+  const video = document.querySelector(`${sectionSelector} video`);
+  const playPauseButton = document.querySelector(
+    `${sectionSelector} .play-pause`
+  );
+
+  ScrollTrigger.create({
+    trigger: sectionSelector,
+    start: "top 75%",
+    end: "top 75%",
+    onEnter: () => toggleVideoPlayPause(video, true, playPauseButton),
+    onLeaveBack: () => toggleVideoPlayPause(video, false, playPauseButton),
+  });
+
+  const tl = gsap.timeline();
+
+  tl.to(`${sectionSelector} .heading`, {
+    top: "-25%",
+    scrollTrigger: {
+      trigger: sectionSelector,
+      start: "bottom bottom",
+      end: "top -25%",
+      scrub: true,
+      pin: true,
+    },
+  });
+
+  if (document.querySelector(`${sectionSelector} .link`)) {
+    tl.to(`${sectionSelector} .link`, {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: sectionSelector,
+        start: "bottom 99%",
+        end: "bottom 98%",
+        scrub: true,
+      },
+    });
+  }
+
+  tl.to(`${sectionSelector} .video-div`, {
+    scaleX: 0.95,
+    scrollTrigger: {
+      trigger: sectionSelector,
+      start: "bottom 98%",
+      end: "bottom 25%",
+      scrub: true,
+    },
+  });
+}
+
+// Entertainment Section
+experienceVideoAnimation("#entertainment");
 
 // Canvas
 class CanvasAnimation {
@@ -175,8 +254,6 @@ class CanvasAnimation {
 
     this.context = this.canvas.getContext("2d");
 
-    this.setCanvasSize();
-
     this.desktopImages = desktopImages;
     this.mobileImages = mobileImages;
     this.currentImages = this.getCurrentImageSet();
@@ -186,6 +263,7 @@ class CanvasAnimation {
     this.scrollConfig = scrollConfig;
 
     this.init();
+    this.setCanvasSize();
   }
 
   setCanvasSize() {
@@ -218,7 +296,7 @@ class CanvasAnimation {
   async init() {
     await this.preloadImages(this.currentImages);
     this.render();
-    this.setupResizeListener();
+    // this.setupResizeListener();
     this.setupScrollAnimation();
   }
 
@@ -252,43 +330,23 @@ class CanvasAnimation {
     );
   }
 
-  setupResizeListener() {
-    const throttle = (func, limit) => {
-      let lastFunc;
-      let lastRan;
-      return function (...args) {
-        const context = this;
-        if (!lastRan) {
-          func.apply(context, args);
-          lastRan = Date.now();
-        } else {
-          clearTimeout(lastFunc);
-          lastFunc = setTimeout(() => {
-            if (Date.now() - lastRan >= limit) {
-              func.apply(context, args);
-              lastRan = Date.now();
-            }
-          }, limit - (Date.now() - lastRan));
-        }
-      };
-    };
-
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        this.setCanvasSize();
-        const newImageSet = this.getCurrentImageSet();
-        if (newImageSet !== this.currentImages) {
-          this.currentImages = newImageSet;
-          this.images.clear();
-          this.preloadImages(this.currentImages).then(() => this.render());
-        }
-      }, 100)
-    );
-  }
+  // setupResizeListener() {
+  //   window.addEventListener(
+  //     "resize",
+  //     throttle(() => {
+  //       this.setCanvasSize();
+  //       const newImageSet = this.getCurrentImageSet();
+  //       if (newImageSet !== this.currentImages) {
+  //         this.currentImages = newImageSet;
+  //         this.images.clear();
+  //         this.preloadImages(this.currentImages).then(() => this.render());
+  //       }
+  //     }, 100)
+  //   );
+  // }
 
   setupScrollAnimation() {
-    const { trigger, start, end, scrub, scroller } = this.scrollConfig;
+    const { trigger, scroller, start, end, scrub, pin } = this.scrollConfig;
 
     gsap.to(this.imageSeq, {
       frame: this.currentImages.length - 1,
@@ -306,20 +364,3 @@ class CanvasAnimation {
     });
   }
 }
-
-// Usage Example
-// const desktopImages = Array.from(
-//   { length: 118 },
-//   (_, i) =>
-//     `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1735043877/zelt/canvas/${String(
-//       i + 1
-//     )}.webp`
-// );
-
-// const scrollConfig = {
-//   trigger: "#hero canvas",
-//   start: "top top",
-//   end: "300% top",
-//   scrub: 0.15,
-//   scroller: "body",
-// };

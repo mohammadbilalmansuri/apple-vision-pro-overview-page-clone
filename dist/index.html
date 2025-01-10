@@ -8,6 +8,15 @@
       name="description"
       content="Apple Vision Pro is Apple's first spatial computer. It seamlessly blends digital content with your physical space using revolutionary technology."
     />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/apple-favicon.webp"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/lenis@1.1.18/dist/lenis.css"
+    />
     <link rel="stylesheet" href="./output.css" />
   </head>
   <body class="w-full relative overflow-x-hidden text-black fill-black">
@@ -62,13 +71,15 @@
               </svg>
             </button>
 
-            <video
-              id="hero-video"
-              src="./assets/videos/hero-video.mp4"
-              class="w-auto h-full object-contain"
-              muted
-              autoplay
-            ></video>
+            <div class="w-auto h-full overflow-hidden relative">
+              <video
+                id="hero-video"
+                src="./assets/videos/hero-video.mp4"
+                class="w-auto h-full object-contain scale-[1.01]"
+                muted
+                autoplay
+              ></video>
+            </div>
           </div>
 
           <div
@@ -136,19 +147,19 @@
             id="foundation-content"
             class="w-full max-w-screen-lg px-5 flex flex-col items-center gap-16 text-center text-white absolute z-10 top-full"
           >
-            <h2 class="leading-[1.15] text-5xl font-bold">
+            <h3 class="leading-[1.15] text-5xl font-bold">
               Apple Vision Pro seamlessly blends digital content with your
               physical space.
-            </h2>
-            <h2 class="leading-[1.15] text-5xl font-bold">
+            </h3>
+            <h3 class="leading-[1.15] text-5xl font-bold">
               So you can work, watch, relive memories, and connect in ways never
               before possible.
-            </h2>
-            <h2 class="leading-[1.15] text-5xl font-bold">
+            </h3>
+            <h3 class="leading-[1.15] text-5xl font-bold">
               The era of spatial computing is here.
-            </h2>
+            </h3>
             <button
-              class="mt-5 text-orange fill-orange border-orange bg-transparent border-2 rounded-full py-3.5 px-7 text-xl flex items-center gap-2 hover:bg-orange hover:text-white hover:fill-white transition-all font-semibold"
+              class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
             >
               <svg viewBox="0 0 512 512" class="size-5">
                 <path
@@ -173,17 +184,17 @@
                 class="max-w-96"
               />
 
-              <!-- <video
-                id="intro-video"
-                src="./assets/videos/intro-video.mp4"
-                class="w-full"
-                muted
-              ></video> -->
-
-              <canvas id="intro-canvas" class="w-full"></canvas>
+              <div class="w-full relative overflow-hidden">
+                <video
+                  id="intro-video"
+                  src="./assets/videos/intro-video.mp4"
+                  class="w-full object-contain scale-[1.01]"
+                  muted
+                ></video>
+              </div>
 
               <button
-                class="bg-transparent border-2 rounded-full py-3.5 px-7 text-xl flex items-center gap-2 hover:bg-black hover:text-white hover:fill-white transition-all font-semibold"
+                class="btn bg-transparent border-2 border-black hover:bg-black hover:text-white hover:fill-white"
               >
                 <svg viewBox="0 0 448 512" class="size-5">
                   <path
@@ -196,35 +207,89 @@
           </div>
         </section>
 
-        <!-- <section
+        <section
           id="entertainment"
           class="w-full relative flex flex-col items-center"
         >
           <div
-            class="w-full height-full bg-black relative flex flex-col items-center"
+            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
           >
             <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-gray">
+              <svg viewBox="0 0 512 512" class="size-9 fill-white">
                 <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
               </svg>
             </button>
 
             <video
-              id="entertainment-video"
               src="./assets/videos/entertainment-video.mp4"
               class="size-full object-cover object-center opacity-80"
               muted
               loop
             ></video>
+
+            <div
+              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+            >
+              <h5 class="text-2xl font-bold leading-none">Entertainment</h5>
+              <h2 class="h2">The ultimate theater.<br />Wherever you are.</h2>
+            </div>
+
+            <a
+              href="https://tv.apple.com/us/movie/napoleon/umc.cmc.25k80oxl3vo69c8rimk8v81s1?itscg=10000&itsct=atv--vision_pro-stream3-apl-240610"
+              class="link sf-text-pro text-sm font-semibold leading-tight text-white group flex items-center gap-2 absolute right-10 bottom-10"
+            >
+              <span class="group-hover:underline"
+                >Stream <em>Napoleon</em> on Apple&nbsp;TV+</span
+              >
+              <svg viewBox="0 0 448 512" class="size-3 fill-white -rotate-45">
+                <path
+                  d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                />
+              </svg>
+            </a>
           </div>
-        </section> -->
+        </section>
+
+        <div
+          class="w-full max-w-screen-lg mx-auto relative px-5 pt-20 py-40 flex gap-20"
+        >
+          <h3
+            class="w-[35%] text-[2rem] font-bold leading-[1.15] tracking-[0.005em]"
+          >
+            A new dimension for entertainment.
+          </h3>
+          <div class="w-[65%] flex flex-col items-start gap-12">
+            <p
+              class="text-[1.3125rem] font-semibold leading-snug text-gray tracking-[0.015em]"
+            >
+              Apple Vision Pro can transform any room into your own personal
+              theater. Expand your movies, shows, and games to your perfect size
+              and experience them in Spatial Audio. Apple Immersive Video puts
+              you in the center of the action with mind-blowing immersion. And
+              with more pixels than a 4K TV for each eye, you can enjoy stunning
+              content wherever you are — on a long flight or the couch at home.
+            </p>
+
+            <button
+              class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+            >
+              <svg viewBox="0 0 448 512" class="size-5">
+                <path
+                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                />
+              </svg>
+              <span>Learn more about entertainment</span>
+            </button>
+          </div>
+        </div>
 
         <div class="h-[300vh] bg-gray"></div>
       </main>
     </div>
 
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="./app.js"></script>
