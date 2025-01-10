@@ -92,19 +92,19 @@ document.querySelectorAll(".play-pause").forEach((button) => {
   });
 });
 
-// Hero Section
-(() => {
-  const heroVideo = document.getElementById("hero-video");
+// // Hero Section
+// (() => {
+//   const heroVideo = document.getElementById("hero-video");
 
-  if (!heroVideo) {
-    console.error("Hero Video not found");
-    return;
-  }
+//   if (!heroVideo) {
+//     console.error("Hero Video not found");
+//     return;
+//   }
 
-  heroVideo.addEventListener("ended", () => {
-    playVideo(heroVideo, 5);
-  });
-})();
+//   heroVideo.addEventListener("ended", () => {
+//     playVideo(heroVideo, 5);
+//   });
+// })();
 
 const headerHeight = getComputedStyle(document.querySelector("header")).height;
 console.log(headerHeight);
