@@ -46,6 +46,10 @@
   :root {
     --header-height: 3.25rem;
   }
+
+  video {
+    filter: grayscale(0);
+  }
 }
 
 @tailwind components;

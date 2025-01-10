@@ -71,15 +71,13 @@
               </svg>
             </button>
 
-            <div class="w-auto h-full overflow-hidden relative">
-              <video
-                id="hero-video"
-                src="./assets/videos/hero-video.mp4"
-                class="w-auto h-full object-contain scale-[1.01]"
-                muted
-                autoplay
-              ></video>
-            </div>
+            <video
+              src="./assets/videos/hero-video.mp4"
+              autoplay
+              loop
+              muted
+              class="h-full object-cover object-center"
+            ></video>
           </div>
 
           <div
@@ -151,13 +149,16 @@
               Apple Vision Pro seamlessly blends digital content with your
               physical space.
             </h3>
+
             <h3 class="leading-[1.15] text-5xl font-bold">
               So you can work, watch, relive memories, and connect in ways never
               before possible.
             </h3>
+
             <h3 class="leading-[1.15] text-5xl font-bold">
               The era of spatial computing is here.
             </h3>
+
             <button
               class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
             >
@@ -184,14 +185,12 @@
                 class="max-w-96"
               />
 
-              <div class="w-full relative overflow-hidden">
-                <video
-                  id="intro-video"
-                  src="./assets/videos/intro-video.mp4"
-                  class="w-full object-contain scale-[1.01]"
-                  muted
-                ></video>
-              </div>
+              <video
+                id="intro-video"
+                src="./assets/videos/intro-video.mp4"
+                class="w-full object-contain"
+                muted
+              ></video>
 
               <button
                 class="btn bg-transparent border-2 border-black hover:bg-black hover:text-white hover:fill-white"
