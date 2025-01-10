@@ -70,6 +70,14 @@
   .height-full {
     height: calc(100dvh - var(--header-height));
   }
+
+  .h2 {
+    @apply text-[5rem] font-bold leading-none;
+  }
+
+  .btn {
+    @apply py-4 px-8 text-[1.1875rem] leading-tight tracking-[0.015em] font-semibold rounded-full transition-all flex items-center gap-2;
+  }
 }
 
 @tailwind utilities;
@@ -80,5 +88,9 @@
 
   .w-inherit {
     width: inherit;
+  }
+
+  .clip-video {
+    clip-path: inset(0.5px);
   }
 }
