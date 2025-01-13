@@ -386,30 +386,46 @@ class CanvasAnimation {
   }
 }
 
-// Design Section
-const designCanvas = new CanvasAnimation(
+// Design Section Initial Canvas Animation
+gsap.from("#design-canvas", {
+  scale: 0.9,
+  ease: "none",
+  scrollTrigger: {
+    trigger: "#design-canvas-div",
+    scroller: "body",
+    start: "top 75%",
+    end: `top ${headerHeight}`,
+    scrub: true,
+  },
+});
+
+new CanvasAnimation(
   "#design-canvas",
-  Array.from({ length: 198 }, (_, i) => `./assets/images/design/${i}.jpeg`),
+  Array.from({ length: 20 }, (_, i) => `./assets/images/design/${i}.jpeg`),
   {
     trigger: "#design-canvas-div",
     scroller: "body",
-    start: `top ${headerHeight}`,
-    end: "top -300%",
+    start: "top 75%",
+    end: `top ${headerHeight}`,
     scrub: true,
-    pin: true,
-    // pinSpacing: true,
   },
   false
 );
 
-// gsap.to("#design-grid", {
-//   top: 0,
-//   ease: "none",
-//   scrollTrigger: {
-//     trigger: "#design-canvas-div",
-//     scroller: "body",
-//     start: "top -301%",
-//     end: "top -400%",
-//     scrub: true,
-//   },
-// });
+// Design Section Pinned Canvas Animation
+new CanvasAnimation(
+  "#design-canvas",
+  Array.from(
+    { length: 177 },
+    (_, i) => `./assets/images/design/${i + 21}.jpeg`
+  ),
+  {
+    trigger: "#design-canvas-div",
+    scroller: "body",
+    start: `top ${headerHeight}`,
+    end: "top -400%",
+    scrub: true,
+    pin: true,
+  },
+  false
+);

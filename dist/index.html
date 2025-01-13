@@ -662,7 +662,7 @@
               class="w-full 2xl:max-w-screen-xl max-w-screen-lg height-full relative flex flex-col items-center"
             >
               <canvas id="design-canvas" class="size-full relative"></canvas>
-              <!-- <div class="w-full flex justify-between items-start">
+              <div class="w-full flex justify-between items-start">
                 <div class="w-56 relative flex flex-col items-start">
                   <p class="text-19 text-gray font-semibold absolute">
                     <span class="text-black">Front.</span> A singular piece of
@@ -697,27 +697,257 @@
                     aluminum alloy frame that curves to wrap around your face.
                   </p>
                 </div>
-              </div> -->
+              </div>
             </div>
-          </div>
-
-          <div
-            id="design-grid"
-            class="w-full h-screen bg-blue flex flex-col items-center absolute top-full"
-          >
-            <div
-              class="w-full 2xl:max-w-screen-xl max-w-screen-lg relative flex flex-col gap-10 items-center"
-            ></div>
           </div>
         </section>
 
-        <div
-          class="w-full h-[300vh] bg-gray relative flex flex-col gap-10 items-center"
+        <section
+          id="design-grid"
+          class="w-full relative flex flex-col items-center"
         >
           <div
-            class="w-full max-w-screen-lg relative flex flex-col items-center"
-          ></div>
-        </div>
+            class="w-full 2xl:max-w-screen-2xl xl:max-w-screen-xl max-w-screen-lg px-5 pt-20 flex flex-col items-center gap-40"
+          >
+            <div class="w-full relative grid grid-cols-2 gap-10">
+              <img
+                src="./assets/images/glass_top.jpg"
+                alt="Apple Vision Pro Glass Top"
+              />
+              <img
+                src="./assets/images/glass_side.jpg"
+                alt="Apple Vision Pro Glass Side"
+              />
+              <div class="w-full relative col-span-2">
+                <button class="play-pause absolute top-5 right-5 z-10">
+                  <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                    <path
+                      d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24z"
+                    />
+                  </svg>
+                </button>
+
+                <video
+                  src="./assets/videos/glass.mp4"
+                  autoplay
+                  loop
+                  muted
+                ></video>
+              </div>
+            </div>
+
+            <p
+              class="text-21 text-gray font-semibold text-center max-w-screen-sm"
+            >
+              A singular piece of
+              <span class="text-black"
+                >three-dimensionally formed laminated glass</span
+              >
+              acts as an optical surface for the cameras and sensors that view
+              the world. It flows seamlessly into a
+              <span class="text-black">custom aluminum alloy frame</span>
+              that gently curves to wrap around your face while serving as an
+              attachment point for the
+              <span class="text-black">Light Seal</span>.
+            </p>
+
+            <div class="w-full px-48 relative flex flex-col items-center">
+              <img
+                src="./assets/images/light_seal.jpg"
+                alt="Apple Vision Pro Light Seal"
+              />
+
+              <button
+                class="btn bg-orange hover:bg-orange/90 text-white fill-white absolute bottom-32"
+              >
+                <svg viewBox="0 0 448 512" class="size-5">
+                  <path
+                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                  />
+                </svg>
+                <span>Learn more about design</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="technology"
+          class="w-full relative flex flex-col items-center bg-black"
+        >
+          <div
+            class="w-full relative flex flex-col items-center gap-40 px-5 py-40"
+          >
+            <div
+              class="w-full max-w-screen-lg relative flex flex-col items-center text-center gap-16"
+            >
+              <h5 class="text-2xl font-bold leading-none text-white">
+                Technology
+              </h5>
+              <h2 class="h2 -mt-10 max-w-screen-md text-white">
+                Innovation you can see, hear, and feel.
+              </h2>
+              <p
+                class="max-w-screen-md text-2xl font-semibold leading-snug text-gray tracking-[0.015em]"
+              >
+                <span class="text-white"
+                  >Pushing boundaries from the inside out.</span
+                >
+                Spatial experiences on Apple Vision Pro are only possible
+                through groundbreaking Apple technology. Displays the size of a
+                postage stamp that deliver more pixels than a 4K TV to each eye.
+                Incredible advances in Spatial Audio. A revolutionary dual-chip
+                design featuring custom Apple silicon. A sophisticated array of
+                cameras and sensors. All the elements work together to create an
+                unprecedented experience you have to see to believe.
+              </p>
+
+              <img
+                src="./assets/images/display.png"
+                alt="Display"
+                class="w-full my-10"
+              />
+
+              <h3 class="text-32 font-bold text-white">
+                More pixels than a 4K TV. For each eye.
+              </h3>
+              <p
+                class="text-21 font-semibold text-gray w-full max-w-screen-sm -mt-6"
+              >
+                The
+                <span class="text-white">custom micro-OLED display system</span>
+                features 23 million pixels, delivering stunning resolution and
+                colors. And a specially designed three-element lens creates the
+                feeling of a display that's everywhere you look.
+              </p>
+            </div>
+
+            <div
+              class="w-full px-10 relative flex flex-col items-center -mt-20"
+            >
+              <video
+                src="./assets/videos/spatial-audio.mp4"
+                muted
+                autoplay
+                class="w-full"
+              ></video>
+
+              <div
+                class="w-full max-w-screen-lg flex flex-col items-end -mt-60 px-5"
+              >
+                <div
+                  class="w-full max-w-screen-xs pl-20 relative flex flex-col gap-10"
+                >
+                  <h3 class="text-32 font-bold text-white">
+                    Our most advanced Spatial Audio system ever.
+                  </h3>
+                  <p class="text-gray text-21 font-semibold">
+                    Dual-driver audio pods positioned next to each ear deliver
+                    personalized sound while letting you hear what's around you.
+                    <span class="text-white">Spatial Audio</span> makes sounds
+                    feel like they're coming from your surroundings. Audio ray
+                    tracing analyzes your room's acoustic properties to adapt
+                    and match sound to your space. And if you want to use
+                    headphones with Apple Vision Pro, AirPods Pro 2 with USB-C
+                    and AirPods 4 offer the perfect experience — featuring
+                    Lossless Audio with ultra-low latency, supported by the
+                    H2-to-H2 connection across devices.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="w-full max-w-screen-lg relative flex flex-col items-center gap-16 text-center"
+            >
+              <img
+                src="./assets/images/eye_tracking.jpg"
+                alt="Eye Tracing"
+                class="w-full"
+              />
+
+              <h3 class="text-32 font-bold text-white">
+                Responsive, precision eye tracking.
+              </h3>
+              <p
+                class="text-21 font-semibold text-gray w-full max-w-screen-sm -mt-6"
+              >
+                A high-performance eye-tracking system of
+                <span class="text-white">LEDs</span> and
+                <span class="text-white">infrared cameras</span> projects
+                invisible light patterns onto each eye. This advanced system
+                provides ultraprecise input without your needing to hold any
+                controllers, so you can accurately select elements just by
+                looking at them.
+              </p>
+            </div>
+
+            <div
+              class="w-full max-w-screen-lg relative flex flex-col items-center gap-16 text-center"
+            >
+              <img
+                src="./assets/images/sensors.jpg"
+                alt="All Sensors"
+                class="w-full"
+              />
+
+              <h3 class="text-32 font-bold text-white">
+                A sophisticated sensor array.
+              </h3>
+              <p
+                class="text-21 font-semibold text-gray w-full max-w-screen-sm -mt-6"
+              >
+                A pair of
+                <span class="text-white">high-resolution cameras</span> transmit
+                over one billion pixels per second to the displays so you can
+                see the world around you clearly. The system also helps deliver
+                <span class="text-white">precise head and hand tracking</span>
+                and <span class="text-white">real-time 3D mapping</span>, all
+                while understanding your hand gestures from a wide range of
+                positions.
+              </p>
+            </div>
+
+            <div
+              class="w-full max-w-screen-xl relative flex flex-col items-center gap-20 text-center"
+            >
+              <img
+                src="./assets/images/sensors_chips.jpg"
+                alt="Sensors Chips"
+                class="w-full"
+              />
+
+              <h3 class="text-32 font-bold text-white max-w-screen-xs">
+                Revolutionary dual-chip performance.
+              </h3>
+              <p
+                class="text-21 font-semibold text-gray w-full max-w-screen-sm -mt-10"
+              >
+                A unique dual-chip design enables the spatial experiences on
+                Apple Vision Pro. The powerful
+                <span class="text-white">M2</span> chip simultaneously runs
+                visionOS, executes advanced computer vision algorithms, and
+                delivers stunning graphics, all with incredible efficiency. And
+                the brand-new <span class="text-white">R1</span> chip is
+                specifically dedicated to process input from the cameras,
+                sensors, and microphones, streaming images to the displays
+                within 12 milliseconds — for a virtually lag-free, real-time
+                view of the world.
+              </p>
+
+              <button
+                class="btn bg-white hover:bg-white/90 text-black fill-black"
+              >
+                <svg viewBox="0 0 448 512" class="size-5">
+                  <path
+                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                  />
+                </svg>
+                <span>Learn more about technology</span>
+              </button>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
