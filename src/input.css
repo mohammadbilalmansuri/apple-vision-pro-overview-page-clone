@@ -2,38 +2,38 @@
 @layer base {
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305509/applevisionpro/fonts/sf-pro-display-regular.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-display-regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305509/applevisionpro/fonts/sf-pro-display-semibold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-display-semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305509/applevisionpro/fonts/sf-pro-display-bold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-display-bold.woff2");
     font-weight: 700;
     font-style: normal;
   }
 
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305510/applevisionpro/fonts/sf-pro-text-light.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-text-light.woff2");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305510/applevisionpro/fonts/sf-pro-text-regular.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-text-regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1736305511/applevisionpro/fonts/sf-pro-text-semibold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-text-semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
@@ -47,8 +47,22 @@
     --header-height: 3.25rem;
   }
 
+  @media screen and (max-width: 768px) {
+    :root {
+      --header-height: 3rem;
+    }
+  }
+
   video {
     filter: grayscale(0);
+  }
+
+  .sf-pro-text {
+    font-family: "SF Pro Text", "SF Pro Display", sans-serif !important;
+  }
+
+  .w-inherit {
+    width: inherit;
   }
 }
 
@@ -79,22 +93,21 @@
     @apply text-[5rem] font-bold leading-none;
   }
 
+  .text-19 {
+    @apply text-[1.1875rem] leading-tight tracking-[0.015em];
+  }
+
+  .text-21 {
+    @apply text-[1.3125rem] leading-snug tracking-[0.015em];
+  }
+
+  .text-32 {
+    @apply text-[2rem] leading-[1.15] tracking-[0.015em];
+  }
+
   .btn {
-    @apply py-4 px-8 text-[1.1875rem] leading-tight tracking-[0.015em] font-semibold rounded-full transition-all flex items-center gap-2;
+    @apply py-4 px-8 text-19 font-semibold rounded-full transition-all flex items-center gap-2;
   }
 }
 
 @tailwind utilities;
-@layer utilities {
-  .sf-pro-text {
-    font-family: "SF Pro Text", "SF Pro Display", sans-serif !important;
-  }
-
-  .w-inherit {
-    width: inherit;
-  }
-
-  .clip-video {
-    clip-path: inset(0.5px);
-  }
-}

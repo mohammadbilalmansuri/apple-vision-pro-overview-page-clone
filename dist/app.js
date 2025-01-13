@@ -92,22 +92,21 @@ document.querySelectorAll(".play-pause").forEach((button) => {
   });
 });
 
-// // Hero Section
-// (() => {
-//   const heroVideo = document.getElementById("hero-video");
+// Hero Section
+(() => {
+  const heroVideo = document.getElementById("hero-video");
 
-//   if (!heroVideo) {
-//     console.error("Hero Video not found");
-//     return;
-//   }
+  if (!heroVideo) {
+    console.error("Hero Video not found");
+    return;
+  }
 
-//   heroVideo.addEventListener("ended", () => {
-//     playVideo(heroVideo, 5);
-//   });
-// })();
+  heroVideo.addEventListener("ended", () => {
+    playVideo(heroVideo, 5);
+  });
+})();
 
-const headerHeight = getComputedStyle(document.querySelector("header")).height;
-console.log(headerHeight);
+const headerHeight = document.querySelector("header").offsetHeight;
 
 // Foundation Section
 (() => {
@@ -137,7 +136,7 @@ console.log(headerHeight);
         trigger: "#foundation",
         scroller: "body",
         start: `top ${headerHeight}`,
-        end: "top -190%",
+        end: "top -250%",
         scrub: true,
         pin: true,
         onLeave: () =>
@@ -156,9 +155,11 @@ console.log(headerHeight);
     })
     .to("#foundation-content", {
       top: "-60%",
+      ease: "none",
     })
     .to("#intro", {
       top: 0,
+      ease: "none",
     });
 
   const introVideo = document.querySelector("#intro-video");
@@ -171,16 +172,21 @@ console.log(headerHeight);
   ScrollTrigger.create({
     trigger: "#intro-content",
     scroller: "body",
-    start: "top top",
-    end: "top -75%",
+    start: "top -75%",
+    end: "top -150%",
     scrub: true,
     onUpdate: (self) => {
-      introVideo.currentTime = self.progress * introVideo.duration;
+      const currentTime = self.progress * introVideo.duration;
+      requestAnimationFrame(() => {
+        if (Math.abs(introVideo.currentTime - currentTime) > 0.1) {
+          introVideo.currentTime = currentTime;
+        }
+      });
     },
   });
 })();
 
-function experienceVideoAnimation(sectionSelector) {
+function videoHeadingAnimation(sectionSelector) {
   if (!sectionSelector) {
     console.error("Section selector not provided");
     return;
@@ -193,50 +199,61 @@ function experienceVideoAnimation(sectionSelector) {
 
   ScrollTrigger.create({
     trigger: sectionSelector,
+    scroller: "body",
     start: "top 75%",
     end: "top 75%",
     onEnter: () => toggleVideoPlayPause(video, true, playPauseButton),
     onLeaveBack: () => toggleVideoPlayPause(video, false, playPauseButton),
   });
 
-  const tl = gsap.timeline();
-
-  tl.to(`${sectionSelector} .heading`, {
+  gsap.to(`${sectionSelector} .heading`, {
     top: "-25%",
+    ease: "none",
     scrollTrigger: {
       trigger: sectionSelector,
-      start: "bottom bottom",
-      end: "top -25%",
+      scroller: "body",
+      start: `top ${headerHeight}`,
+      end: "top -50%",
       scrub: true,
       pin: true,
     },
   });
 
-  if (document.querySelector(`${sectionSelector} .link`)) {
-    tl.to(`${sectionSelector} .link`, {
+  const linkElement = document.querySelector(`${sectionSelector} .link`);
+  if (linkElement) {
+    gsap.to(linkElement, {
       opacity: 0,
+      ease: "none",
       scrollTrigger: {
         trigger: sectionSelector,
-        start: "bottom 99%",
-        end: "bottom 98%",
+        scroller: "body",
+        start: "top top",
+        end: "top -1%",
         scrub: true,
       },
     });
   }
 
-  tl.to(`${sectionSelector} .video-div`, {
-    scaleX: 0.95,
+  gsap.to(`${sectionSelector} .video-div`, {
+    scaleX: 0.9,
+    ease: "none",
     scrollTrigger: {
       trigger: sectionSelector,
-      start: "bottom 98%",
-      end: "bottom 25%",
+      scroller: "body",
+      start: "top -1%",
+      end: "top -100%",
       scrub: true,
     },
   });
 }
 
-// Entertainment Section
-experienceVideoAnimation("#entertainment");
+// Experience Sections
+videoHeadingAnimation("#entertainment");
+videoHeadingAnimation("#productivity");
+videoHeadingAnimation("#photos-videos");
+videoHeadingAnimation("#connection");
+videoHeadingAnimation("#apps");
+videoHeadingAnimation("#visionOS");
 
 // Canvas
 class CanvasAnimation {
@@ -244,6 +261,8 @@ class CanvasAnimation {
     canvasSelector,
     desktopImages,
     scrollConfig,
+    isImageCenterFromY = true,
+    isImageCenterFromX = true,
     mobileImages = null
   ) {
     this.canvas = document.querySelector(canvasSelector);
@@ -253,29 +272,25 @@ class CanvasAnimation {
     }
 
     this.context = this.canvas.getContext("2d");
-
+    this.setCanvasSize();
     this.desktopImages = desktopImages;
     this.mobileImages = mobileImages;
     this.currentImages = this.getCurrentImageSet();
-
     this.images = new Map();
     this.imageSeq = { frame: 0 };
     this.scrollConfig = scrollConfig;
-
+    this.isImageCenterFromY = isImageCenterFromY;
+    this.isImageCenterFromX = isImageCenterFromX;
     this.init();
-    this.setCanvasSize();
   }
 
   setCanvasSize() {
-    const computedStyle = getComputedStyle(this.canvas);
-    this.canvas.width = parseInt(computedStyle.width, 10);
-    this.canvas.height = parseInt(computedStyle.height, 10);
+    this.canvas.width = this.canvas.offsetWidth;
+    this.canvas.height = this.canvas.offsetHeight;
   }
 
   getCurrentImageSet() {
-    if (this.mobileImages && window.innerWidth < 768) {
-      return this.mobileImages;
-    }
+    if (this.mobileImages && window.innerWidth < 768) return this.mobileImages;
     return this.desktopImages;
   }
 
@@ -313,8 +328,12 @@ class CanvasAnimation {
     const hRatio = canvas.width / img.width;
     const vRatio = canvas.height / img.height;
     const ratio = Math.max(hRatio, vRatio);
-    const centerShift_x = (canvas.width - img.width * ratio) / 2;
-    const centerShift_y = (canvas.height - img.height * ratio) / 2;
+    const shift_x = this.isImageCenterFromX
+      ? (canvas.width - img.width * ratio) / 2
+      : 0;
+    const shift_y = this.isImageCenterFromY
+      ? (canvas.height - img.height * ratio) / 2
+      : 0;
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(
@@ -323,8 +342,8 @@ class CanvasAnimation {
       0,
       img.width,
       img.height,
-      centerShift_x,
-      centerShift_y,
+      shift_x,
+      shift_y,
       img.width * ratio,
       img.height * ratio
     );
@@ -346,7 +365,8 @@ class CanvasAnimation {
   // }
 
   setupScrollAnimation() {
-    const { trigger, scroller, start, end, scrub, pin } = this.scrollConfig;
+    const { trigger, scroller, start, end, scrub, pin, ...rest } =
+      this.scrollConfig;
 
     gsap.to(this.imageSeq, {
       frame: this.currentImages.length - 1,
@@ -360,7 +380,36 @@ class CanvasAnimation {
         scrub,
         pin,
         onUpdate: () => this.render(),
+        ...rest,
       },
     });
   }
 }
+
+// Design Section
+const designCanvas = new CanvasAnimation(
+  "#design-canvas",
+  Array.from({ length: 198 }, (_, i) => `./assets/images/design/${i}.jpeg`),
+  {
+    trigger: "#design-canvas-div",
+    scroller: "body",
+    start: `top ${headerHeight}`,
+    end: "top -300%",
+    scrub: true,
+    pin: true,
+    // pinSpacing: true,
+  },
+  false
+);
+
+// gsap.to("#design-grid", {
+//   top: 0,
+//   ease: "none",
+//   scrollTrigger: {
+//     trigger: "#design-canvas-div",
+//     scroller: "body",
+//     start: "top -301%",
+//     end: "top -400%",
+//     scrub: true,
+//   },
+// });
