@@ -27,7 +27,7 @@
         <div
           class="size-full max-w-screen-lg px-5 py-3.5 flex justify-between items-center gap-6"
         >
-          <a href="/" class="leading-none text-xl font-semibold"
+          <a href="/" class="text-21 leading-none tracking-normal font-semibold"
             >Apple Vision Pro</a
           >
 
@@ -72,9 +72,9 @@
             </button>
 
             <video
-              src="./assets/videos/hero-video.mp4"
+              id="hero-video"
+              src="./assets/videos/hero.mp4"
               autoplay
-              loop
               muted
               class="h-full object-cover object-center"
             ></video>
@@ -121,7 +121,7 @@
 
         <section
           id="foundation"
-          class="w-full height-full relative flex flex-col items-center"
+          class="w-full height-full relative overflow-hidden"
         >
           <div class="size-full bg-black relative flex flex-col items-center">
             <button class="play-pause absolute top-5 right-5 z-10">
@@ -134,7 +134,7 @@
 
             <video
               id="foundation-video"
-              src="./assets/videos/foundation-video.mp4"
+              src="./assets/videos/foundation.mp4"
               class="size-full object-cover object-center opacity-80"
               muted
               loop
@@ -143,32 +143,36 @@
 
           <div
             id="foundation-content"
-            class="w-full max-w-screen-lg px-5 flex flex-col items-center gap-16 text-center text-white absolute z-10 top-full"
+            class="w-full flex flex-col items-center absolute z-10 top-full"
           >
-            <h3 class="leading-[1.15] text-5xl font-bold">
-              Apple Vision Pro seamlessly blends digital content with your
-              physical space.
-            </h3>
-
-            <h3 class="leading-[1.15] text-5xl font-bold">
-              So you can work, watch, relive memories, and connect in ways never
-              before possible.
-            </h3>
-
-            <h3 class="leading-[1.15] text-5xl font-bold">
-              The era of spatial computing is here.
-            </h3>
-
-            <button
-              class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
+            <div
+              class="w-full max-w-screen-lg px-5 flex flex-col items-center gap-16 text-center text-white"
             >
-              <svg viewBox="0 0 512 512" class="size-5">
-                <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-              <span>Watch the film</span>
-            </button>
+              <h3 class="leading-[1.15] text-5xl font-bold">
+                Apple Vision Pro seamlessly blends digital content with your
+                physical space.
+              </h3>
+
+              <h3 class="leading-[1.15] text-5xl font-bold">
+                So you can work, watch, relive memories, and connect in ways
+                never before possible.
+              </h3>
+
+              <h3 class="leading-[1.15] text-5xl font-bold">
+                The era of spatial computing is here.
+              </h3>
+
+              <button
+                class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
+              >
+                <svg viewBox="0 0 512 512" class="size-5">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+                <span>Watch the film</span>
+              </button>
+            </div>
           </div>
 
           <div
@@ -187,7 +191,7 @@
 
               <video
                 id="intro-video"
-                src="./assets/videos/intro-video.mp4"
+                src="./assets/videos/intro.mp4"
                 class="w-full object-contain"
                 muted
               ></video>
@@ -206,10 +210,7 @@
           </div>
         </section>
 
-        <section
-          id="entertainment"
-          class="w-full relative flex flex-col items-center"
-        >
+        <section id="entertainment" class="w-full relative">
           <div
             class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
           >
@@ -222,7 +223,7 @@
             </button>
 
             <video
-              src="./assets/videos/entertainment-video.mp4"
+              src="./assets/videos/entertainment.mp4"
               class="size-full object-cover object-center opacity-80"
               muted
               loop
@@ -240,7 +241,7 @@
               class="link sf-text-pro text-sm font-semibold leading-tight text-white group flex items-center gap-2 absolute right-10 bottom-10"
             >
               <span class="group-hover:underline"
-                >Stream <em>Napoleon</em> on Apple&nbsp;TV+</span
+                >Stream <em>Napoleon</em> on Apple TV+</span
               >
               <svg viewBox="0 0 448 512" class="size-3 fill-white -rotate-45">
                 <path
@@ -249,42 +250,474 @@
               </svg>
             </a>
           </div>
+
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-20 py-40 flex gap-20"
+            >
+              <h3 class="w-[35%] text-32 font-bold">
+                A new dimension for entertainment.
+              </h3>
+              <div class="w-[65%] flex flex-col items-start gap-12">
+                <p class="text-21 font-semibold text-gray">
+                  Apple Vision Pro can transform any room into your own personal
+                  theater. Expand your movies, shows, and games to your perfect
+                  size and experience them in Spatial Audio. Apple Immersive
+                  Video puts you in the center of the action with mind-blowing
+                  immersion. And with more pixels than a 4K TV for each eye, you
+                  can enjoy stunning content wherever you are — on a long flight
+                  or the couch at home.
+                </p>
+
+                <button
+                  class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+                >
+                  <svg viewBox="0 0 448 512" class="size-5">
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                  </svg>
+                  <span>Learn more about entertainment</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="productivity" class="w-full relative">
+          <div
+            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+          >
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              src="./assets/videos/productivity.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+
+            <div
+              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+            >
+              <h5 class="text-2xl font-bold leading-none">Productivity</h5>
+              <h2 class="h2 max-w-screen-md">
+                A workspace with infinite space.
+              </h2>
+            </div>
+          </div>
+
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-20 py-40 flex gap-20"
+            >
+              <h3 class="w-[35%] text-32 font-bold">
+                Discover new ways to work.
+              </h3>
+              <div class="w-[65%] flex flex-col items-start gap-12">
+                <p class="text-21 font-semibold text-gray">
+                  Apple Vision Pro gives you limitless space to get things done.
+                  Organize everything you need anywhere around you, in any way
+                  you like. Seamlessly bring in your Mac workflows using Mac
+                  Virtual Display. Connect a Magic Keyboard, a Magic Trackpad,
+                  and other Bluetooth accessories to expand how you navigate.
+                  And with SharePlay in FaceTime, you can collaborate with
+                  colleagues using apps together in real time.
+                </p>
+
+                <button
+                  class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+                >
+                  <svg viewBox="0 0 448 512" class="size-5">
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                  </svg>
+                  <span>Learn more about productivity</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="photos-videos" class="w-full relative">
+          <div
+            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+          >
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              src="./assets/videos/photos-videos.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+
+            <div
+              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+            >
+              <h5 class="text-2xl font-bold leading-none">Photos and Videos</h5>
+              <h2 class="h2">Be in the moment.<br />All over again.</h2>
+            </div>
+          </div>
+
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-20 py-40 flex gap-20"
+            >
+              <h3 class="w-[35%] text-32 font-bold">
+                Your memories come alive.
+              </h3>
+              <div class="w-[65%] flex flex-col items-start gap-12">
+                <p class="text-21 font-semibold text-gray">
+                  Apple Vision Pro is Apple's first 3D camera. You can capture
+                  magical spatial photos and spatial videos in 3D, then relive
+                  those cherished moments like never before with immersive
+                  Spatial Audio. Your existing library of photos and videos
+                  looks incredible at remarkable scale — and now you can
+                  transform your 2D photos into spatial photos with just a tap.
+                  Even panoramas wrap around you — making you feel like you're
+                  standing right where you took them. You can also take spatial
+                  videos with iPhone 16 Pro, iPhone 16, or iPhone 15 Pro, as
+                  well as spatial photos with iPhone 16 Pro or iPhone 16, then
+                  view them on Apple Vision Pro.
+                </p>
+
+                <button
+                  class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+                >
+                  <svg viewBox="0 0 448 512" class="size-5">
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                  </svg>
+                  <span>Learn more about photos and videos</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="connection" class="w-full relative">
+          <div
+            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+          >
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              src="./assets/videos/connection.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+
+            <div
+              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+            >
+              <h5 class="text-2xl font-bold leading-none">Connection</h5>
+              <h2 class="h2">Share quality time.<br />And space.</h2>
+            </div>
+          </div>
+
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-20 py-40 flex gap-20"
+            >
+              <h3 class="w-[35%] text-32 font-bold">
+                A more engaging way to get together.
+              </h3>
+              <div class="w-[65%] flex flex-col items-start gap-12">
+                <p class="text-21 font-semibold text-gray">
+                  Apple Vision Pro makes it easy to collaborate and connect
+                  wherever you are. You can see FaceTime participants in
+                  life-size video tiles, or you can choose to use your spatial
+                  Persona and feel like you are sharing the same space with
+                  others. And use SharePlay to watch, listen, and play together
+                  with your favorite people.
+                </p>
+
+                <button
+                  class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+                >
+                  <svg viewBox="0 0 448 512" class="size-5">
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                  </svg>
+                  <span>Learn more about connections</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="apps" class="w-full relative">
+          <div
+            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+          >
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              src="./assets/videos/apps.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+
+            <div
+              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+            >
+              <h5 class="text-2xl font-bold leading-none">Apps</h5>
+              <h2 class="h2 max-w-screen-md">
+                Do what you love.<br />Reimagine how you do it.
+              </h2>
+            </div>
+
+            <p
+              class="link sf-text-pro text-sm font-semibold leading-tight text-white group flex items-center gap-2 absolute right-10 bottom-10"
+            >
+              Featured apps:<br />Game Room; Kung Fu Panda: School of Chi;
+              myMako.*<br />*For informational purposes only. Not for diagnostic
+              use.
+            </p>
+          </div>
+
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-20 py-40 flex gap-20"
+            >
+              <h3 class="w-[35%] text-32 font-bold">
+                A world of apps.<br />A world of discovery.
+              </h3>
+              <div class="w-[65%] flex flex-col items-start gap-5">
+                <p class="text-21 font-semibold text-gray">
+                  Apple Vision Pro expands the experience of your go-to apps and
+                  opens up new possibilities in entertainment, productivity,
+                  gaming, and more. Browse the web in Safari, create a to-do
+                  list in Notes, chat in Messages, and seamlessly move between
+                  them with a glance. And explore the App Store to discover an
+                  ever-expanding collection of awe-inspiring spatial apps
+                  designed for Apple Vision Pro.
+                </p>
+
+                <a
+                  href="https://apps.apple.com/us/vision"
+                  class="text-21 text-blue group flex items-center gap-2 mb-7"
+                >
+                  <span class="group-hover:underline">Visit the App Store</span>
+                  <svg
+                    viewBox="0 0 448 512"
+                    class="size-3 fill-blue -rotate-45"
+                  >
+                    <path
+                      d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                    />
+                  </svg>
+                </a>
+
+                <button
+                  class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+                >
+                  <svg viewBox="0 0 448 512" class="size-5">
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                  </svg>
+                  <span>Learn more about apps</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="visionOS" class="w-full relative">
+          <div
+            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+          >
+            <button class="play-pause absolute top-5 right-5 z-10">
+              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                <path
+                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                />
+              </svg>
+            </button>
+
+            <video
+              src="./assets/videos/visionOS.mp4"
+              class="size-full object-cover object-center opacity-80"
+              muted
+              loop
+            ></video>
+
+            <div
+              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+            >
+              <h5 class="text-2xl font-bold leading-none">visionOS</h5>
+              <h2 class="h2 max-w-screen-md">
+                An operating system designed for spatial.
+              </h2>
+            </div>
+          </div>
+
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-20 py-40 flex gap-20"
+            >
+              <h3 class="w-[35%] text-32 font-bold">
+                Navigate spatial experiences. Naturally.
+              </h3>
+              <div class="w-[65%] flex flex-col items-start gap-5">
+                <p class="text-21 font-semibold text-gray">
+                  Built on the foundation of macOS, iOS, and iPadOS, visionOS
+                  enables powerful spatial experiences. Control Apple Vision Pro
+                  with your eyes, hands, and voice — interactions feel intuitive
+                  and magical. Simply look at an element, tap your fingers
+                  together to select, and use the virtual keyboard or dictation
+                  to type. And visionOS 2 delivers even more ways to enhance
+                  work, entertainment, and connecting with friends and family
+                  using Apple Vision Pro.
+                </p>
+
+                <a
+                  href="https://www.apple.com/visionos/visionos-2/"
+                  class="text-21 text-blue group flex items-center gap-2 mb-7"
+                >
+                  <span class="group-hover:underline"
+                    >Learn more about visionOS 2</span
+                  >
+                  <svg viewBox="0 0 320 512" class="size-5 fill-blue">
+                    <path
+                      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                    />
+                  </svg>
+                </a>
+
+                <button
+                  class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+                >
+                  <svg viewBox="0 0 448 512" class="size-5">
+                    <path
+                      d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
+                    />
+                  </svg>
+                  <span>Learn more about visionOS</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="design"
+          class="w-full relative bg-lightGray overflow-hidden"
+        >
+          <div class="w-full relative flex flex-col items-center">
+            <div
+              class="w-full max-w-screen-lg relative px-5 pt-40 pb-20 flex flex-col items-center text-center gap-12"
+            >
+              <h5 class="text-2xl font-bold leading-none">Design</h5>
+              <h2 class="h2 -mt-7">Designed by Apple.</h2>
+              <p
+                class="max-w-screen-md text-2xl font-semibold leading-snug text-gray tracking-[0.015em]"
+              >
+                Apple Vision Pro is the result of decades of experience
+                designing high-performance, mobile, and wearable devices —
+                culminating in the most ambitious product Apple has ever
+                created. Apple Vision Pro integrates incredibly advanced
+                technology into an elegant, compact form, resulting in an
+                amazing experience every time you put it on.
+              </p>
+            </div>
+          </div>
+
+          <div
+            id="design-canvas-div"
+            class="w-full relative flex flex-col items-center"
+          >
+            <div
+              class="w-full 2xl:max-w-screen-xl max-w-screen-lg height-full relative flex flex-col items-center"
+            >
+              <canvas id="design-canvas" class="size-full relative"></canvas>
+              <!-- <div class="w-full flex justify-between items-start">
+                <div class="w-56 relative flex flex-col items-start">
+                  <p class="text-19 text-gray font-semibold absolute">
+                    <span class="text-black">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
+                  </p>
+                  <p class="text-19 text-gray font-semibold absolute">
+                    <span class="text-black">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
+                  </p>
+                  <p class="text-19 text-gray font-semibold absolute">
+                    <span class="text-black">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
+                  </p>
+                </div>
+                <div class="w-56 relative flex flex-col items-start">
+                  <p class="text-19 text-gray font-semibold absolute">
+                    <span class="text-black">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
+                  </p>
+                  <p class="text-19 text-gray font-semibold absolute">
+                    <span class="text-black">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
+                  </p>
+                  <p class="text-19 text-gray font-semibold absolute">
+                    <span class="text-black">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
+                  </p>
+                </div>
+              </div> -->
+            </div>
+          </div>
+
+          <div
+            id="design-grid"
+            class="w-full h-screen bg-blue flex flex-col items-center absolute top-full"
+          >
+            <div
+              class="w-full 2xl:max-w-screen-xl max-w-screen-lg relative flex flex-col gap-10 items-center"
+            ></div>
+          </div>
         </section>
 
         <div
-          class="w-full max-w-screen-lg mx-auto relative px-5 pt-20 py-40 flex gap-20"
+          class="w-full h-[300vh] bg-gray relative flex flex-col gap-10 items-center"
         >
-          <h3
-            class="w-[35%] text-[2rem] font-bold leading-[1.15] tracking-[0.005em]"
-          >
-            A new dimension for entertainment.
-          </h3>
-          <div class="w-[65%] flex flex-col items-start gap-12">
-            <p
-              class="text-[1.3125rem] font-semibold leading-snug text-gray tracking-[0.015em]"
-            >
-              Apple Vision Pro can transform any room into your own personal
-              theater. Expand your movies, shows, and games to your perfect size
-              and experience them in Spatial Audio. Apple Immersive Video puts
-              you in the center of the action with mind-blowing immersion. And
-              with more pixels than a 4K TV for each eye, you can enjoy stunning
-              content wherever you are — on a long flight or the couch at home.
-            </p>
-
-            <button
-              class="btn bg-orange hover:bg-orange/90 text-white fill-white"
-            >
-              <svg viewBox="0 0 448 512" class="size-5">
-                <path
-                  d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
-                />
-              </svg>
-              <span>Learn more about entertainment</span>
-            </button>
-          </div>
+          <div
+            class="w-full max-w-screen-lg relative flex flex-col items-center"
+          ></div>
         </div>
-
-        <div class="h-[300vh] bg-gray"></div>
       </main>
     </div>
 
