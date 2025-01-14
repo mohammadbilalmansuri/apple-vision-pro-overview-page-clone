@@ -25,13 +25,6 @@ function debounce(func, wait) {
   };
 }
 
-window.addEventListener(
-  "resize",
-  debounce(() => {
-    window.location.reload();
-  }, 50)
-);
-
 function playVideo(videoElement, currentTime) {
   if (!(videoElement instanceof HTMLVideoElement)) {
     console.error("Invalid video element provided.");
@@ -311,7 +304,7 @@ class CanvasAnimation {
   async init() {
     await this.preloadImages(this.currentImages);
     this.render();
-    // this.setupResizeListener();
+    this.setupResizeListener();
     this.setupScrollAnimation();
   }
 
@@ -349,20 +342,20 @@ class CanvasAnimation {
     );
   }
 
-  // setupResizeListener() {
-  //   window.addEventListener(
-  //     "resize",
-  //     throttle(() => {
-  //       this.setCanvasSize();
-  //       const newImageSet = this.getCurrentImageSet();
-  //       if (newImageSet !== this.currentImages) {
-  //         this.currentImages = newImageSet;
-  //         this.images.clear();
-  //         this.preloadImages(this.currentImages).then(() => this.render());
-  //       }
-  //     }, 100)
-  //   );
-  // }
+  setupResizeListener() {
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        this.setCanvasSize();
+        const newImageSet = this.getCurrentImageSet();
+        if (newImageSet !== this.currentImages) {
+          this.currentImages = newImageSet;
+          this.images.clear();
+          this.preloadImages(this.currentImages).then(() => this.render());
+        }
+      }, 100)
+    );
+  }
 
   setupScrollAnimation() {
     const { trigger, scroller, start, end, scrub, pin, ...rest } =
