@@ -89,7 +89,7 @@
     height: calc(100dvh - var(--header-height));
   }
 
-  .h2 {
+  .text-80 {
     @apply text-[5rem] font-bold leading-none;
   }
 
@@ -103,6 +103,10 @@
 
   .text-32 {
     @apply text-[2rem] leading-[1.15] tracking-[0.015em];
+  }
+
+  .text-56 {
+    @apply text-[3.5rem] leading-[1.075];
   }
 
   .btn {
