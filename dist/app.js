@@ -154,7 +154,7 @@ document.querySelectorAll(".play-pause").forEach((button) => {
 })();
 
 const headerHeight = document.querySelector("header").offsetHeight;
-/* 
+
 // Foundation Section
 (() => {
   const foundationVideo = document.getElementById("foundation-video");
@@ -483,4 +483,3 @@ new CanvasAnimation(
   },
   false
 );
- */
