@@ -2,13 +2,6 @@
 export default {
   content: ["./dist/**/*.{html,js}"],
   theme: {
-    extend: {
-      screens: {
-        xs: "480px",
-        xl: "1340px",
-        "2xl": "1540px",
-      },
-    },
     colors: {
       transparent: "transparent",
       current: "currentColor",
@@ -21,6 +14,15 @@ export default {
       lightGray: "#F5F5F7",
       extraLightGray: "#FBFBFD",
     },
+    screens: {
+      xs: "480px",
+      sm: "640px",
+      md: "840px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1540px",
+    },
+    extend: {},
   },
   plugins: [],
 };

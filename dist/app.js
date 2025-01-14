@@ -25,6 +25,60 @@ function debounce(func, wait) {
   };
 }
 
+// Header Animations
+
+let isPopupOpen = false;
+const popupBtn = document.getElementById("popup-btn");
+
+const togglePopup = () => {
+  const header = document.querySelector("header");
+  const headerDiv = document.getElementById("header-div");
+  const logoDiv = document.getElementById("logo-div");
+  const nav = headerDiv.querySelector("nav");
+
+  if (!isPopupOpen) {
+    popupBtn.classList.add("rotate-x-180");
+    header.classList.add("h-screen", "bg-extraLightGray/50");
+    headerDiv.classList.add("bg-extraLightGray");
+    logoDiv.classList.replace("bg-extraLightGray/75", "bg-extraLightGray");
+
+    gsap.to(nav, {
+      height: "auto",
+      duration: 0.3,
+      onComplete: () => {
+        nav.classList.remove("pointer-events-none");
+        nav.classList.add("shadow-sm");
+        window.addEventListener("scroll", onPopupOpenScrollHandler);
+        isPopupOpen = true;
+      },
+    });
+  } else {
+    popupBtn.classList.remove("rotate-x-180");
+    header.classList.remove("h-screen", "bg-extraLightGray/50");
+    headerDiv.classList.remove("bg-extraLightGray");
+    logoDiv.classList.replace("bg-extraLightGray", "bg-extraLightGray/75");
+
+    gsap.to(nav, {
+      height: 0,
+      duration: 0.3,
+      onComplete: () => {
+        nav.classList.add("pointer-events-none");
+        nav.classList.remove("shadow-sm");
+        window.removeEventListener("scroll", onPopupOpenScrollHandler);
+        isPopupOpen = false;
+      },
+    });
+  }
+};
+
+const onPopupOpenScrollHandler = () => {
+  if (isPopupOpen) togglePopup();
+};
+
+popupBtn.addEventListener("click", debounce(togglePopup, 200));
+
+// Main Section Animations
+
 function playVideo(videoElement, currentTime) {
   if (!(videoElement instanceof HTMLVideoElement)) {
     console.error("Invalid video element provided.");
@@ -100,7 +154,7 @@ document.querySelectorAll(".play-pause").forEach((button) => {
 })();
 
 const headerHeight = document.querySelector("header").offsetHeight;
-
+/* 
 // Foundation Section
 (() => {
   const foundationVideo = document.getElementById("foundation-video");
@@ -429,3 +483,4 @@ new CanvasAnimation(
   },
   false
 );
+ */
