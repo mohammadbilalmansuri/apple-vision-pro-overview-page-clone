@@ -394,7 +394,11 @@ gsap.from("#design-canvas", {
 
 new CanvasAnimation(
   "#design-canvas",
-  Array.from({ length: 20 }, (_, i) => `./assets/images/design/${i}.jpeg`),
+  Array.from(
+    { length: 20 },
+    (_, i) =>
+      `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/design/${i}.webp`
+  ),
   {
     trigger: "#design-canvas-div",
     scroller: "body",
@@ -410,7 +414,10 @@ new CanvasAnimation(
   "#design-canvas",
   Array.from(
     { length: 177 },
-    (_, i) => `./assets/images/design/${i + 21}.jpeg`
+    (_, i) =>
+      `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/design/${
+        i + 21
+      }.webp`
   ),
   {
     trigger: "#design-canvas-div",
