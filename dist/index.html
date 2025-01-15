@@ -22,15 +22,15 @@
   <body class="w-full relative overflow-x-hidden text-black-2 fill-black-2">
     <div class="w-full relative">
       <header
-        class="w-full md:h-[var(--header-height)] z-50 fixed top-0 left-0 flex flex-col items-center md:justify-center backdrop-blur-lg transition-all duration-300 md:bg-gray-3/75 dark:md:bg-black/75"
+        class="w-full z-50 fixed top-0 left-0 flex flex-col items-center backdrop-blur-[20px] bg-gray-3/80 dark:bg-black/80"
       >
         <div
           id="header-div"
-          class="md:size-full max-w-medium md:bg-transparent md:px-5 md:py-3.5 flex md:flex-row flex-col md:justify-between md:items-center md:gap-6"
+          class="h-[var(--header-height)] w-full max-w-5xl px-5 flex md:flex-row flex-col md:justify-between md:items-center md:gap-6 overflow-hidden"
         >
           <div
             id="logo-div"
-            class="w-full md:h-auto h-[var(--header-height)] md:bg-transparent dark:md:bg-transparent bg-gray-3/75 dark:bg-black/75 md:px-0 md:py-0 px-4 py-3 flex items-center justify-between gap-4"
+            class="md:w-auto w-full md:min-h-full min-h-[var(--header-height)] flex items-center justify-between gap-4"
           >
             <a
               href="/"
@@ -65,36 +65,32 @@
           </div>
 
           <nav
-            class="md:min-w-fit w-full md:h-auto h-0 md:overflow-visible overflow-hidden md:pointer-events-auto pointer-events-none md:px-0 md:py-0 px-4"
+            class="md:w-auto w-full flex md:flex-row flex-col md:items-center items-start md:gap-6 gap-5 md:pt-0 md:pb-0 pt-3 pb-6"
           >
-            <div
-              class="w-full flex md:flex-row flex-col md:items-center items-start md:justify-end md:gap-6 gap-5 md:pt-0 pt-5 md:pb-0 pb-7"
+            <a
+              class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:border-l-0 border-l-[1.5px] border-l-black dark:border-l-white text-black dark:text-white cursor-pointer relative md:after:content-[''] md:after:absolute md:after:bottom-[-18px] md:after:left-0 md:after:w-full md:after:h-[1px] md:after:bg-black md:after:z-50"
+              >Overview</a
             >
-              <a
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:border-l-0 border-l-[1.5px] border-l-black dark:border-l-white text-black dark:text-white cursor-pointer relative md:after:content-[''] md:after:absolute md:after:bottom-[-18px] md:after:left-0 md:after:w-full md:after:h-[1px] md:after:bg-black md:after:z-50"
-                >Overview</a
-              >
-              <a
-                href="https://www.apple.com/apple-vision-pro/guided-tour/"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black/80 dark:md:text-white/80 md:hover:text-black dark:md:hover:text-white text-black dark:text-white"
-                >Guided Tour</a
-              >
-              <a
-                href="https://www.apple.com/apple-vision-pro/specs/"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black/80 dark:md:text-white/80 md:hover:text-black dark:md:hover:text-white text-black dark:text-white"
-                >Tech Specs</a
-              >
-              <a
-                href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-2.5 pl-4 md:pr-2.5 md:py-1 md:border md:rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black md:border-black dark:border-white text-black dark:text-white"
-                >Book a demo</a
-              >
-              <a
-                href="https://www.apple.com/us/shop/goto/buy_vision/apple_vision_pro"
-                class="sf-pro-text text-xs md:block hidden py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white"
-                >Buy</a
-              >
-            </div>
+            <a
+              href="https://www.apple.com/apple-vision-pro/guided-tour/"
+              class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:text-black/80 dark:md:text-white/80 md:hover:text-black dark:md:hover:text-white text-black dark:text-white md:pl-0 pl-4"
+              >Guided Tour</a
+            >
+            <a
+              href="https://www.apple.com/apple-vision-pro/specs/"
+              class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:text-black/80 dark:md:text-white/80 md:hover:text-black dark:md:hover:text-white text-black dark:text-white md:pl-0 pl-4"
+              >Tech Specs</a
+            >
+            <a
+              href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
+              class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-2.5 pl-4 md:pr-2.5 md:py-1 md:border md:rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black md:border-black dark:border-white text-black dark:text-white"
+              >Book a demo</a
+            >
+            <a
+              href="https://www.apple.com/us/shop/goto/buy_vision/apple_vision_pro"
+              class="sf-pro-text text-xs md:block hidden py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white"
+              >Buy</a
+            >
           </nav>
         </div>
       </header>
@@ -106,9 +102,9 @@
         >
           <div class="size-full relative flex flex-col items-center">
             <button
-              class="play-pause xl:block hidden absolute top-[calc(var(--header-height)+1.25rem)] right-5 z-10"
+              class="play-pause xl:block hidden top-[calc(var(--header-height)+1.25rem)]"
             >
-              <svg viewBox="0 0 512 512" class="size-9 fill-gray">
+              <svg viewBox="0 0 512 512" class="play-pause-icon fill-gray">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24z"
                 />
@@ -131,7 +127,7 @@
           </div>
 
           <div
-            class="absolute xl:bottom-[7%] sm:bottom-[8%] bottom-[10%] flex flex-col items-center gap-7 z-10 md:px-5 px-4"
+            class="absolute xl:bottom-[7%] sm:bottom-[8%] bottom-[10%] flex flex-col items-center gap-7 z-10 px-5"
           >
             <img
               src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
@@ -171,30 +167,39 @@
 
         <section
           id="foundation"
-          class="w-full xl:height-full relative overflow-hidden"
+          class="w-full xl:h-[calc(100dvh-var(--header-height))] relative overflow-hidden"
         >
-          <div class="xl:hidden w-full flex flex-col items-center">
+          <div
+            id="foundation-content"
+            class="w-full flex flex-col items-center xl:absolute xl:z-10 xl:top-full"
+          >
             <div
-              class="w-full max-w-medium px-5 flex flex-col items-center gap-16 text-center text-white"
+              class="w-full xl:max-w-5xl lg:max-w-4xl md:max-w-3xl sm:max-w-xl xs:max-w-md px-5 xl:py-0 md:py-32 py-24 flex flex-col items-center xl:gap-16 lg:gap-12 md:gap-8 gap-4 text-center xl:text-white"
             >
-              <h3 class="leading-[1.15] text-5xl font-bold">
+              <h3
+                class="leading-[1.15] xl:text-[3rem] lg:text-[2.5rem] md:text-[2rem] text-[1.5rem] font-bold"
+              >
                 Apple Vision Pro seamlessly blends digital content with your
                 physical space.
               </h3>
 
-              <h3 class="leading-[1.15] text-5xl font-bold">
+              <h3
+                class="leading-[1.15] xl:text-[3rem] lg:text-[2.5rem] md:text-[2rem] text-[1.5rem] font-bold"
+              >
                 So you can work, watch, relive memories, and connect in ways
                 never before possible.
               </h3>
 
-              <h3 class="leading-[1.15] text-5xl font-bold">
+              <h3
+                class="leading-[1.15] xl:text-[3rem] lg:text-[2.5rem] md:text-[2rem] text-[1.5rem] font-bold"
+              >
                 The era of spatial computing is here.
               </h3>
 
               <button
-                class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
+                class="btn mt-4 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
               >
-                <svg viewBox="0 0 512 512" class="size-5">
+                <svg viewBox="0 0 512 512" class="btn-svg">
                   <path
                     d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                   />
@@ -204,9 +209,11 @@
             </div>
           </div>
 
-          <div class="size-full bg-black relative flex flex-col items-center">
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-gray-2">
+          <div
+            class="xl:size-full xl:mx-0 lg:mx-12 md:mx-8 bg-black relative flex flex-col items-center"
+          >
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -216,71 +223,37 @@
             <video
               id="foundation-video"
               src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/foundation.mp4"
-              class="size-full object-cover object-center opacity-80"
+              class="size-full object-cover object-center xl:opacity-80"
               muted
               loop
             ></video>
           </div>
 
           <div
-            id="foundation-content"
-            class="w-full hidden xl:flex flex-col items-center absolute z-10 top-full"
-          >
-            <div
-              class="w-full max-w-screen-lg px-5 flex flex-col items-center gap-16 text-center text-white"
-            >
-              <h3 class="leading-[1.15] text-5xl font-bold">
-                Apple Vision Pro seamlessly blends digital content with your
-                physical space.
-              </h3>
-
-              <h3 class="leading-[1.15] text-5xl font-bold">
-                So you can work, watch, relive memories, and connect in ways
-                never before possible.
-              </h3>
-
-              <h3 class="leading-[1.15] text-5xl font-bold">
-                The era of spatial computing is here.
-              </h3>
-
-              <button
-                class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
-              >
-                <svg viewBox="0 0 512 512" class="size-5">
-                  <path
-                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                  />
-                </svg>
-                <span>Watch the film</span>
-              </button>
-            </div>
-          </div>
-
-          <div
             id="intro"
-            class="w-full height-full flex flex-col items-center justify-center xl:absolute xl:z-10 xl:top-full xl:bg-white"
+            class="w-full xl:h-[calc(100dvh-var(--header-height))] flex flex-col items-center xl:justify-center xl:absolute xl:z-10 xl:top-full xl:bg-white"
           >
             <div
               id="intro-content"
-              class="w-full max-w-screen-lg flex flex-col items-center gap-10 px-5"
+              class="w-full xl:max-w-5xl flex flex-col items-center gap-10 px-5 xl:py-0 md:py-32 py-24"
             >
               <img
                 src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
                 alt="Apple Vision Pro Logo"
-                class="max-w-96"
+                class="xl:max-w-96 md:max-w-80 max-w-60"
               />
 
               <video
                 id="intro-video"
                 src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/intro.mp4"
-                class="xl:block hidden w-full object-contain"
+                class="xl:w-full lg:max-w-4xl md:max-w-2xl sm:max-w-lg xs:max-w-sm object-contain"
                 muted
               ></video>
 
               <button
                 class="btn bg-transparent border-2 border-black hover:bg-black hover:text-white hover:fill-white"
               >
-                <svg viewBox="0 0 448 512" class="size-5">
+                <svg viewBox="0 0 448 512" class="btn-svg">
                   <path
                     d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
                   />
@@ -293,10 +266,10 @@
 
         <section id="entertainment" class="w-full relative">
           <div
-            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
           >
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -369,10 +342,10 @@
 
         <section id="productivity" class="w-full relative">
           <div
-            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
           >
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -431,10 +404,10 @@
 
         <section id="photos-videos" class="w-full relative">
           <div
-            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
           >
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -495,10 +468,10 @@
 
         <section id="connection" class="w-full relative">
           <div
-            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
           >
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -554,10 +527,10 @@
 
         <section id="apps" class="w-full relative">
           <div
-            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
           >
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -639,10 +612,10 @@
 
         <section id="visionOS" class="w-full relative">
           <div
-            class="video-div w-full height-full bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
           >
-            <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-white">
+            <button class="play-pause">
+              <svg viewBox="0 0 512 512" class="play-pause-icon">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -739,7 +712,7 @@
             class="w-full relative flex flex-col items-center"
           >
             <div
-              class="w-full 2xl:max-w-screen-xl max-w-screen-lg height-full relative flex flex-col items-center"
+              class="w-full 2xl:max-w-screen-xl max-w-screen-lg h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center"
             >
               <canvas id="design-canvas" class="size-full relative"></canvas>
               <div class="w-full flex justify-between items-start">
@@ -799,8 +772,8 @@
                 alt="Apple Vision Pro Glass Side"
               />
               <div class="w-full relative col-span-2">
-                <button class="play-pause absolute top-5 right-5 z-10">
-                  <svg viewBox="0 0 512 512" class="size-9 fill-white">
+                <button class="play-pause">
+                  <svg viewBox="0 0 512 512" class="play-pause-icon">
                     <path
                       d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24z"
                     />

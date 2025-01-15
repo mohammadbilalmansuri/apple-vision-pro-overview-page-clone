@@ -29,45 +29,37 @@ function debounce(func, wait) {
 
 const header = document.querySelector("header");
 const headerHeight = header.offsetHeight;
-let isPopupOpen = false;
 const popupBtn = document.getElementById("popup-btn");
+let isPopupOpen = false;
+const headerDiv = document.getElementById("header-div");
 
 const togglePopup = () => {
-  const header = document.querySelector("header");
-  const headerDiv = document.getElementById("header-div");
-  const logoDiv = document.getElementById("logo-div");
-  const nav = headerDiv.querySelector("nav");
-
   if (!isPopupOpen) {
     popupBtn.classList.add("rotate-x-180");
-    header.classList.add("h-screen", "bg-gray-3/50", "dark:bg-black/75");
-    headerDiv.classList.add("bg-gray-3", "dark:bg-black");
-    logoDiv.classList.remove("bg-gray-3/75");
-    logoDiv.classList.remove("dark:bg-black/75");
+    header.classList.add("h-screen");
+    header.classList.replace("bg-gray-3/80", "bg-gray-3/40");
+    header.classList.replace("dark:bg-black/80", "dark:bg-black/40");
+    headerDiv.classList.add("bg-gray-3/80", "dark:bg-black/80", "shadow-sm");
 
-    gsap.to(nav, {
+    gsap.to(headerDiv, {
       height: "auto",
       duration: 0.3,
       onComplete: () => {
-        nav.classList.remove("pointer-events-none");
-        nav.classList.add("shadow-sm");
         window.addEventListener("scroll", onPopupOpenScrollHandler);
         isPopupOpen = true;
       },
     });
   } else {
     popupBtn.classList.remove("rotate-x-180");
-    header.classList.remove("h-screen", "bg-gray-3/50", "dark:bg-black/75");
-    headerDiv.classList.remove("bg-gray-3", "dark:bg-black");
-    logoDiv.classList.add("bg-gray-3/75");
-    logoDiv.classList.add("dark:bg-black/75");
+    header.classList.remove("h-screen");
+    header.classList.replace("bg-gray-3/40", "bg-gray-3/80");
+    header.classList.replace("dark:bg-black/40", "dark:bg-black/80");
+    headerDiv.classList.remove("bg-gray-3/80", "dark:bg-black/80", "shadow-sm");
 
-    gsap.to(nav, {
-      height: 0,
+    gsap.to(headerDiv, {
+      height: headerHeight,
       duration: 0.3,
       onComplete: () => {
-        nav.classList.add("pointer-events-none");
-        nav.classList.remove("shadow-sm");
         window.removeEventListener("scroll", onPopupOpenScrollHandler);
         isPopupOpen = false;
       },
@@ -164,118 +156,98 @@ document.querySelectorAll(".play-pause").forEach((button) => {
 });
 
 // Hero Section
-(() => {
+if (window.innerWidth >= 1240) {
   const heroVideo = document.getElementById("hero-video");
-
-  if (!heroVideo) {
-    console.error("Hero Video not found");
-    return;
-  }
-
   heroVideo.addEventListener("ended", () => {
     playVideo(heroVideo, 5);
   });
-})();
+}
 
 // Foundation Section
-function initFoundationSection() {
-  const foundationVideo = document.getElementById("foundation-video");
-  if (!foundationVideo) {
-    console.error("Foundation video not found");
-    return;
-  }
+const foundationVideo = document.getElementById("foundation-video");
+const foundationPlayPauseButton =
+  foundationVideo.parentElement.querySelector(".play-pause");
+const introVideo = document.querySelector("#intro-video");
 
-  const foundationPlayPauseButton =
-    foundationVideo.parentElement.querySelector(".play-pause");
+if (window.innerWidth < 1240) {
+  ScrollTrigger.create({
+    trigger: "#foundation-video",
+    scroller: "body",
+    start: "top 80%",
+    end: `bottom ${headerHeight}`,
+    onEnter: () =>
+      toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
+    onLeaveBack: () =>
+      toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
+    onLeave: () => {
+      toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton);
+    },
+    onEnterBack: () => {
+      toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton);
+    },
+  });
 
-  const introVideo = document.querySelector("#intro-video");
-  if (!introVideo) {
-    console.error("Intro video not found");
-    return;
-  }
+  introVideo.setAttribute("autoplay", "");
+} else {
+  ScrollTrigger.create({
+    trigger: "#foundation",
+    scroller: "body",
+    start: "top 75%",
+    end: "top 75%",
+    onEnter: () =>
+      toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
+    onLeaveBack: () =>
+      toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
+  });
 
-  if (window.innerWidth < 1240) {
-    ScrollTrigger.create({
-      trigger: "#foundation",
-      scroller: "body",
-      start: "top 75%",
-      end: "top 75%",
-      onEnter: () =>
-        toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
-      onLeaveBack: () =>
-        toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
-      onLeave: () => {
-        toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton);
+  gsap
+    .timeline({
+      scrollTrigger: {
+        trigger: "#foundation",
+        scroller: "body",
+        start: `top ${headerHeight}`,
+        end: "top -250%",
+        scrub: true,
+        pin: true,
+        onLeave: () =>
+          toggleVideoPlayPause(
+            foundationVideo,
+            false,
+            foundationPlayPauseButton
+          ),
+        onEnterBack: () =>
+          toggleVideoPlayPause(
+            foundationVideo,
+            true,
+            foundationPlayPauseButton
+          ),
       },
-      onEnterBack: () => {
-        toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton);
-      },
+    })
+    .to("#foundation-content", {
+      top: "-60%",
+      ease: "none",
+    })
+    .to("#intro", {
+      top: 0,
+      ease: "none",
     });
 
-    introVideo.setAttribute("autoplay", "");
-    return;
-  } else {
-    ScrollTrigger.create({
-      trigger: "#foundation",
-      scroller: "body",
-      start: "top 75%",
-      end: "top 75%",
-      onEnter: () =>
-        toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
-      onLeaveBack: () =>
-        toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
-    });
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#foundation",
-          scroller: "body",
-          start: `top ${headerHeight}`,
-          end: "top -250%",
-          scrub: true,
-          pin: true,
-          onLeave: () =>
-            toggleVideoPlayPause(
-              foundationVideo,
-              false,
-              foundationPlayPauseButton
-            ),
-          onEnterBack: () =>
-            toggleVideoPlayPause(
-              foundationVideo,
-              true,
-              foundationPlayPauseButton
-            ),
-        },
-      })
-      .to("#foundation-content", {
-        top: "-60%",
-        ease: "none",
-      })
-      .to("#intro", {
-        top: 0,
-        ease: "none",
+  ScrollTrigger.create({
+    trigger: "#intro-content",
+    scroller: "body",
+    start: "top -75%",
+    end: "top -150%",
+    scrub: true,
+    onUpdate: (self) => {
+      const currentTime = self.progress * introVideo.duration;
+      requestAnimationFrame(() => {
+        if (Math.abs(introVideo.currentTime - currentTime) > 0.1) {
+          introVideo.currentTime = currentTime;
+        }
       });
-
-    ScrollTrigger.create({
-      trigger: "#intro-content",
-      scroller: "body",
-      start: "top -75%",
-      end: "top -150%",
-      scrub: true,
-      onUpdate: (self) => {
-        const currentTime = self.progress * introVideo.duration;
-        requestAnimationFrame(() => {
-          if (Math.abs(introVideo.currentTime - currentTime) > 0.1) {
-            introVideo.currentTime = currentTime;
-          }
-        });
-      },
-    });
-  }
+    },
+  });
 }
-initFoundationSection();
 
 function videoHeadingAnimation(sectionSelector) {
   if (!sectionSelector) {
@@ -529,13 +501,16 @@ new CanvasAnimation(
 );
 
 let lastWidth = window.innerWidth;
-
 window.addEventListener(
   "resize",
   debounce(() => {
-    if (window.innerWidth !== lastWidth) {
+    const newWidth = window.innerWidth;
+    if (
+      (lastWidth >= 1240 && newWidth < 1240) ||
+      (lastWidth < 1240 && newWidth >= 1240)
+    ) {
       window.location.reload();
-      lastWidth = window.innerWidth;
     }
+    lastWidth = newWidth;
   }, 50)
 );
