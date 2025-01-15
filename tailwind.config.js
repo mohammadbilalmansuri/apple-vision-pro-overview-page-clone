@@ -27,7 +27,12 @@ export default {
       xl: "1240px",
       "2xl": "1440px",
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        display: ['"SF Pro Display"', '"SF Pro Text"', "sans-serif"],
+        text: ['"SF Pro Text"', '"SF Pro Display"', "sans-serif"],
+      },
+    },
   },
   plugins: [],
 };
