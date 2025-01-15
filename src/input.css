@@ -60,12 +60,43 @@
   .sf-pro-text {
     font-family: "SF Pro Text", "SF Pro Display", sans-serif !important;
   }
+
+  .height-full {
+    height: calc(100dvh - var(--header-height));
+  }
+
+  .max-w-medium {
+    width: 100%;
+    max-width: 1020px;
+  }
+
+  .max-w-large {
+    width: 100%;
+    max-width: 1340px;
+  }
+
+  .max-w-extra-large {
+    width: 100%;
+    max-width: 1540px;
+  }
+
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
 }
 
 @tailwind components;
 @layer components {
-  .height-full {
-    height: calc(100dvh - var(--header-height));
+  .color-black {
+    @apply text-black fill-black;
+  }
+
+  .color-secondry-black {
+    @apply text-black-2 fill-setext-black-2;
+  }
+
+  .color-white {
+    @apply text-white fill-white;
   }
 
   .text-80 {
@@ -90,10 +121,6 @@
 
   .btn {
     @apply py-4 px-8 text-19 font-semibold rounded-full transition-all flex items-center gap-2;
-  }
-
-  .rotate-x-180 {
-    transform: rotateX(180deg);
   }
 }
 

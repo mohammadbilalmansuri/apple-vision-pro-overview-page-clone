@@ -19,20 +19,18 @@
     />
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body
-    class="w-full relative overflow-x-hidden text-secondaryBlack fill-secondaryBlack"
-  >
+  <body class="w-full relative overflow-x-hidden color-black">
     <div class="w-full relative">
       <header
-        class="w-full md:h-[var(--header-height)] z-50 fixed top-0 left-0 flex flex-col items-center md:justify-center md:bg-extraLightGray/75 bg-extraLightGray/50 md:backdrop-saturate-150 backdrop-blur-[20px] text-black fill-black transition-all duration-300"
+        class="w-full md:h-[var(--header-height)] z-50 fixed top-0 left-0 flex flex-col items-center md:justify-center md:bg-gray-3/75 backdrop-blur-lg transition-all duration-300 color-black"
       >
         <div
           id="header-div"
-          class="md:size-full w-full max-w-screen-lg md:bg-transparent md:px-5 md:py-3.5 flex md:flex-row flex-col md:justify-between md:items-center md:gap-6"
+          class="md:size-full max-w-medium md:bg-transparent md:px-5 md:py-3.5 flex md:flex-row flex-col md:justify-between md:items-center md:gap-6"
         >
           <div
             id="logo-div"
-            class="w-full md:h-auto h-[var(--header-height)] md:bg-transparent bg-extraLightGray/75 md:px-0 md:py-0 px-4 py-3 flex items-center justify-between gap-4"
+            class="w-full md:h-auto h-[var(--header-height)] md:bg-transparent bg-gray-3/75 md:px-0 md:py-0 px-4 py-3 flex items-center justify-between gap-4"
           >
             <a
               href="/"
@@ -76,12 +74,12 @@
               >
               <a
                 href="https://www.apple.com/apple-vision-pro/guided-tour/"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-secondaryBlack/80 md:hover:text-secondaryBlack"
+                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black-2/80 md:hover:text-black-2"
                 >Guided Tour</a
               >
               <a
                 href="https://www.apple.com/apple-vision-pro/specs/"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-secondaryBlack/80 md:hover:text-secondaryBlack"
+                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black-2/80 md:hover:text-black-2"
                 >Tech Specs</a
               >
               <a
@@ -106,7 +104,7 @@
         >
           <div class="size-full relative flex flex-col items-center">
             <button
-              class="play-pause lg:block hidden absolute top-[calc(var(--header-height)+1.25rem)] right-5 z-10"
+              class="play-pause xl:block hidden absolute top-[calc(var(--header-height)+1.25rem)] right-5 z-10"
             >
               <svg viewBox="0 0 512 512" class="size-9 fill-gray">
                 <path
@@ -120,32 +118,32 @@
               src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/hero.mp4"
               autoplay
               muted
-              class="lg:block hidden h-full object-cover object-center"
+              class="xl:block hidden h-full object-cover object-center"
             ></video>
 
             <img
               src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/hero.webp"
               alt="Hero Mobile Image"
-              class="lg:hidden block h-full object-cover object-center"
+              class="xl:hidden block h-full object-cover object-center"
             />
           </div>
 
           <div
-            class="absolute lg:bottom-[7%] bottom-[8%] flex flex-col items-center gap-7 z-10 px-5"
+            class="absolute xl:bottom-[6.5%] sm:bottom-[7.5%] bottom-[10%] flex flex-col items-center gap-7 z-10 md:px-5 px-4"
           >
             <img
               src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
               alt="Apple Vision Pro Logo"
-              class="lg:max-w-96 sm:max-w-80 w-60"
+              class="xl:max-w-96 md:max-w-80 max-w-60"
             />
 
-            <div class="flex flex-col items-center lg:gap-4 gap-3">
+            <div class="flex flex-col items-center gap-2.5">
               <a
                 href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
-                class="group flex items-center gap-1 text-orange fill-orange lg:text-2xl sm:text-[1.1875rem] text-[1.0625rem] leading-none font-semibold"
+                class="group flex items-center gap-1 text-orange fill-orange xl:text-2xl md:text-[1.1875rem] text-[1.0625rem] leading-none font-semibold"
               >
                 <span class="group-hover:underline -mt-0.5">Book a demo</span>
-                <svg viewBox="0 0 320 512" class="lg:size-5 size-3.5">
+                <svg viewBox="0 0 320 512" class="xl:size-5 size-3.5">
                   <path
                     d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
                   />
@@ -154,12 +152,12 @@
 
               <a
                 href="https://www.apple.com/visionos/visionos-2/"
-                class="group flex items-center gap-1 text-orange fill-orange lg:text-2xl sm:text-[1.1875rem] text-[1.0625rem] leading-none font-semibold"
+                class="group flex items-center gap-1 text-orange fill-orange xl:text-2xl md:text-[1.1875rem] text-[1.0625rem] leading-none font-semibold"
               >
                 <span class="group-hover:underline">
                   Learn more about visionOS 2</span
                 >
-                <svg viewBox="0 0 320 512" class="lg:size-5 size-3.5">
+                <svg viewBox="0 0 320 512" class="xl:size-5 size-3.5">
                   <path
                     d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
                   />
@@ -175,7 +173,7 @@
         >
           <div class="size-full bg-black relative flex flex-col items-center">
             <button class="play-pause absolute top-5 right-5 z-10">
-              <svg viewBox="0 0 512 512" class="size-9 fill-lightGray">
+              <svg viewBox="0 0 512 512" class="size-9 fill-gray-2">
                 <path
                   d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
                 />
@@ -683,10 +681,7 @@
           </div>
         </section>
 
-        <section
-          id="design"
-          class="w-full relative bg-lightGray overflow-hidden"
-        >
+        <section id="design" class="w-full relative bg-gray-2 overflow-hidden">
           <div class="w-full relative flex flex-col items-center">
             <div
               class="w-full max-w-screen-lg relative px-5 pt-40 pb-20 flex flex-col items-center text-center gap-12"
@@ -717,42 +712,36 @@
               <div class="w-full flex justify-between items-start">
                 <div class="w-56 relative flex flex-col items-start">
                   <p class="text-19 text-gray font-semibold absolute">
-                    <span class="text-secondaryBlack">Front.</span> A singular
-                    piece of three-dimensionally formed laminated glass flows
-                    into an aluminum alloy frame that curves to wrap around your
-                    face.
+                    <span class="text-black-2">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
                   </p>
                   <p class="text-19 text-gray font-semibold absolute">
-                    <span class="text-secondaryBlack">Front.</span> A singular
-                    piece of three-dimensionally formed laminated glass flows
-                    into an aluminum alloy frame that curves to wrap around your
-                    face.
+                    <span class="text-black-2">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
                   </p>
                   <p class="text-19 text-gray font-semibold absolute">
-                    <span class="text-secondaryBlack">Front.</span> A singular
-                    piece of three-dimensionally formed laminated glass flows
-                    into an aluminum alloy frame that curves to wrap around your
-                    face.
+                    <span class="text-black-2">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
                   </p>
                 </div>
                 <div class="w-56 relative flex flex-col items-start">
                   <p class="text-19 text-gray font-semibold absolute">
-                    <span class="text-secondaryBlack">Front.</span> A singular
-                    piece of three-dimensionally formed laminated glass flows
-                    into an aluminum alloy frame that curves to wrap around your
-                    face.
+                    <span class="text-black-2">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
                   </p>
                   <p class="text-19 text-gray font-semibold absolute">
-                    <span class="text-secondaryBlack">Front.</span> A singular
-                    piece of three-dimensionally formed laminated glass flows
-                    into an aluminum alloy frame that curves to wrap around your
-                    face.
+                    <span class="text-black-2">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
                   </p>
                   <p class="text-19 text-gray font-semibold absolute">
-                    <span class="text-secondaryBlack">Front.</span> A singular
-                    piece of three-dimensionally formed laminated glass flows
-                    into an aluminum alloy frame that curves to wrap around your
-                    face.
+                    <span class="text-black-2">Front.</span> A singular piece of
+                    three-dimensionally formed laminated glass flows into an
+                    aluminum alloy frame that curves to wrap around your face.
                   </p>
                 </div>
               </div>
@@ -798,17 +787,15 @@
               class="text-21 text-gray font-semibold text-center max-w-screen-sm"
             >
               A singular piece of
-              <span class="text-secondaryBlack"
+              <span class="text-black-2"
                 >three-dimensionally formed laminated glass</span
               >
               acts as an optical surface for the cameras and sensors that view
               the world. It flows seamlessly into a
-              <span class="text-secondaryBlack"
-                >custom aluminum alloy frame</span
-              >
+              <span class="text-black-2">custom aluminum alloy frame</span>
               that gently curves to wrap around your face while serving as an
               attachment point for the
-              <span class="text-secondaryBlack">Light Seal</span>.
+              <span class="text-black-2">Light Seal</span>.
             </p>
 
             <div class="w-full px-48 relative flex flex-col items-center">
@@ -996,7 +983,7 @@
               </p>
 
               <button
-                class="btn bg-white hover:bg-white/90 text-secondaryBlack fill-secondaryBlack"
+                class="btn bg-white hover:bg-white/90 text-black-2 fill-black-2"
               >
                 <svg viewBox="0 0 448 512" class="size-5">
                   <path
@@ -1020,7 +1007,7 @@
             <p
               class="max-w-screen-md px-5 text-2xl font-semibold leading-snug text-gray tracking-[0.015em]"
             >
-              <span class="text-secondaryBlack">Our values lead the way.</span>
+              <span class="text-black-2">Our values lead the way.</span>
               Apple Vision Pro was designed to help protect your privacy and
               keep you in control of your data. Its built-in accessibility
               features are designed to work the way you do.
@@ -1041,7 +1028,7 @@
           <div
             class="w-full 2xl:max-w-screen-2xl xl:max-w-screen-xl max-w-screen-lg px-5 flex flex-col items-center gap-10 relative"
           >
-            <div class="w-full bg-lightGray flex gap-24 items-center px-52">
+            <div class="w-full bg-gray-2 flex gap-24 items-center px-52">
               <div class="w-[45%] flex flex-col gap-5">
                 <img
                   class="size-[3.25rem]"
@@ -1067,9 +1054,7 @@
               </div>
             </div>
 
-            <div
-              class="w-full bg-lightGray flex gap-24 items-center px-52 py-40"
-            >
+            <div class="w-full bg-gray-2 flex gap-24 items-center px-52 py-40">
               <div class="w-[45%] flex flex-col gap-5">
                 <h2 class="text-56 font-semibold">
                   Explore Apple Vision Pro accessories.
@@ -1097,7 +1082,7 @@
             </div>
 
             <div
-              class="w-full bg-lightGray flex flex-col gap-5 items-center text-center py-40 mb-10"
+              class="w-full bg-gray-2 flex flex-col gap-5 items-center text-center py-40 mb-10"
             >
               <img
                 src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/developers.webp"
@@ -1136,7 +1121,7 @@
         </section>
       </main>
 
-      <footer class="w-full relative flex flex-col items-center bg-lightGray">
+      <footer class="w-full relative flex flex-col items-center bg-gray-2">
         <div
           class="w-full max-w-screen-lg p-5 pb-4 relative flex flex-col gap-2"
         >
