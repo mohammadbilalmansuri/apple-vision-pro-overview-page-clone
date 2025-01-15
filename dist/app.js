@@ -27,6 +27,8 @@ function debounce(func, wait) {
 
 // Header Animations
 
+const header = document.querySelector("header");
+const headerHeight = header.offsetHeight;
 let isPopupOpen = false;
 const popupBtn = document.getElementById("popup-btn");
 
@@ -38,9 +40,10 @@ const togglePopup = () => {
 
   if (!isPopupOpen) {
     popupBtn.classList.add("rotate-x-180");
-    header.classList.add("h-screen", "bg-extraLightGray/50");
-    headerDiv.classList.add("bg-extraLightGray");
-    logoDiv.classList.replace("bg-extraLightGray/75", "bg-extraLightGray");
+    header.classList.add("h-screen", "bg-gray-3/50", "dark:bg-black/75");
+    headerDiv.classList.add("bg-gray-3", "dark:bg-black");
+    logoDiv.classList.remove("bg-gray-3/75");
+    logoDiv.classList.remove("dark:bg-black/75");
 
     gsap.to(nav, {
       height: "auto",
@@ -54,9 +57,10 @@ const togglePopup = () => {
     });
   } else {
     popupBtn.classList.remove("rotate-x-180");
-    header.classList.remove("h-screen", "bg-extraLightGray/50");
-    headerDiv.classList.remove("bg-extraLightGray");
-    logoDiv.classList.replace("bg-extraLightGray", "bg-extraLightGray/75");
+    header.classList.remove("h-screen", "bg-gray-3/50", "dark:bg-black/75");
+    headerDiv.classList.remove("bg-gray-3", "dark:bg-black");
+    logoDiv.classList.add("bg-gray-3/75");
+    logoDiv.classList.add("dark:bg-black/75");
 
     gsap.to(nav, {
       height: 0,
@@ -76,6 +80,26 @@ const onPopupOpenScrollHandler = () => {
 };
 
 popupBtn.addEventListener("click", debounce(togglePopup, 200));
+
+// ScrollTrigger.create({
+//   trigger: "#technology",
+//   scroller: "body",
+//   start: `top ${headerHeight}`,
+//   end: "bottom top",
+//   markers: true,
+//   onEnter: () => {
+//     document.documentElement.classList.add("dark");
+//   },
+//   onLeaveBack: () => {
+//     document.documentElement.classList.remove("dark");
+//   },
+//   onEnterBack: () => {
+//     document.documentElement.classList.add("dark");
+//   },
+//   onLeave: () => {
+//     document.documentElement.classList.remove("dark");
+//   },
+// });
 
 // Main Section Animations
 
@@ -153,10 +177,8 @@ document.querySelectorAll(".play-pause").forEach((button) => {
   });
 })();
 
-const headerHeight = document.querySelector("header").offsetHeight;
-
 // Foundation Section
-(() => {
+function initFoundationSection() {
   const foundationVideo = document.getElementById("foundation-video");
   if (!foundationVideo) {
     console.error("Foundation video not found");
@@ -166,72 +188,94 @@ const headerHeight = document.querySelector("header").offsetHeight;
   const foundationPlayPauseButton =
     foundationVideo.parentElement.querySelector(".play-pause");
 
-  ScrollTrigger.create({
-    trigger: "#foundation",
-    scroller: "body",
-    start: "top 75%",
-    end: "top 75%",
-    onEnter: () =>
-      toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
-    onLeaveBack: () =>
-      toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
-  });
-
-  gsap
-    .timeline({
-      scrollTrigger: {
-        trigger: "#foundation",
-        scroller: "body",
-        start: `top ${headerHeight}`,
-        end: "top -250%",
-        scrub: true,
-        pin: true,
-        onLeave: () =>
-          toggleVideoPlayPause(
-            foundationVideo,
-            false,
-            foundationPlayPauseButton
-          ),
-        onEnterBack: () =>
-          toggleVideoPlayPause(
-            foundationVideo,
-            true,
-            foundationPlayPauseButton
-          ),
-      },
-    })
-    .to("#foundation-content", {
-      top: "-60%",
-      ease: "none",
-    })
-    .to("#intro", {
-      top: 0,
-      ease: "none",
-    });
-
   const introVideo = document.querySelector("#intro-video");
-
   if (!introVideo) {
     console.error("Intro video not found");
     return;
   }
 
-  ScrollTrigger.create({
-    trigger: "#intro-content",
-    scroller: "body",
-    start: "top -75%",
-    end: "top -150%",
-    scrub: true,
-    onUpdate: (self) => {
-      const currentTime = self.progress * introVideo.duration;
-      requestAnimationFrame(() => {
-        if (Math.abs(introVideo.currentTime - currentTime) > 0.1) {
-          introVideo.currentTime = currentTime;
-        }
+  if (window.innerWidth < 1240) {
+    ScrollTrigger.create({
+      trigger: "#foundation",
+      scroller: "body",
+      start: "top 75%",
+      end: "top 75%",
+      onEnter: () =>
+        toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
+      onLeaveBack: () =>
+        toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
+      onLeave: () => {
+        toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton);
+      },
+      onEnterBack: () => {
+        toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton);
+      },
+    });
+
+    introVideo.setAttribute("autoplay", "");
+    return;
+  } else {
+    ScrollTrigger.create({
+      trigger: "#foundation",
+      scroller: "body",
+      start: "top 75%",
+      end: "top 75%",
+      onEnter: () =>
+        toggleVideoPlayPause(foundationVideo, true, foundationPlayPauseButton),
+      onLeaveBack: () =>
+        toggleVideoPlayPause(foundationVideo, false, foundationPlayPauseButton),
+    });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: "#foundation",
+          scroller: "body",
+          start: `top ${headerHeight}`,
+          end: "top -250%",
+          scrub: true,
+          pin: true,
+          onLeave: () =>
+            toggleVideoPlayPause(
+              foundationVideo,
+              false,
+              foundationPlayPauseButton
+            ),
+          onEnterBack: () =>
+            toggleVideoPlayPause(
+              foundationVideo,
+              true,
+              foundationPlayPauseButton
+            ),
+        },
+      })
+      .to("#foundation-content", {
+        top: "-60%",
+        ease: "none",
+      })
+      .to("#intro", {
+        top: 0,
+        ease: "none",
       });
-    },
-  });
-})();
+
+    ScrollTrigger.create({
+      trigger: "#intro-content",
+      scroller: "body",
+      start: "top -75%",
+      end: "top -150%",
+      scrub: true,
+      onUpdate: (self) => {
+        const currentTime = self.progress * introVideo.duration;
+        requestAnimationFrame(() => {
+          if (Math.abs(introVideo.currentTime - currentTime) > 0.1) {
+            introVideo.currentTime = currentTime;
+          }
+        });
+      },
+    });
+  }
+}
+initFoundationSection();
 
 function videoHeadingAnimation(sectionSelector) {
   if (!sectionSelector) {
@@ -482,4 +526,16 @@ new CanvasAnimation(
     pin: true,
   },
   false
+);
+
+let lastWidth = window.innerWidth;
+
+window.addEventListener(
+  "resize",
+  debounce(() => {
+    if (window.innerWidth !== lastWidth) {
+      window.location.reload();
+      lastWidth = window.innerWidth;
+    }
+  }, 50)
 );
