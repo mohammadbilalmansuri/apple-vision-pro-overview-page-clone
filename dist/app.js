@@ -282,9 +282,9 @@ function videoHeadingAnimation(sectionSelector) {
     },
   });
 
-  const linkElement = document.querySelector(`${sectionSelector} .link`);
-  if (linkElement) {
-    gsap.to(linkElement, {
+  const videoText = document.querySelector(`${sectionSelector} .video-text`);
+  if (videoText) {
+    gsap.to(videoText, {
       opacity: 0,
       ease: "none",
       scrollTrigger: {
