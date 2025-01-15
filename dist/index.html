@@ -19,10 +19,10 @@
     />
     <link rel="stylesheet" href="./output.css" />
   </head>
-  <body class="w-full relative overflow-x-hidden color-black">
+  <body class="w-full relative overflow-x-hidden text-black-2 fill-black-2">
     <div class="w-full relative">
       <header
-        class="w-full md:h-[var(--header-height)] z-50 fixed top-0 left-0 flex flex-col items-center md:justify-center md:bg-gray-3/75 backdrop-blur-lg transition-all duration-300 color-black"
+        class="w-full md:h-[var(--header-height)] z-50 fixed top-0 left-0 flex flex-col items-center md:justify-center backdrop-blur-lg transition-all duration-300 md:bg-gray-3/75 dark:md:bg-black/75"
       >
         <div
           id="header-div"
@@ -30,21 +30,23 @@
         >
           <div
             id="logo-div"
-            class="w-full md:h-auto h-[var(--header-height)] md:bg-transparent bg-gray-3/75 md:px-0 md:py-0 px-4 py-3 flex items-center justify-between gap-4"
+            class="w-full md:h-auto h-[var(--header-height)] md:bg-transparent dark:md:bg-transparent bg-gray-3/75 dark:bg-black/75 md:px-0 md:py-0 px-4 py-3 flex items-center justify-between gap-4"
           >
             <a
               href="/"
-              class="text-21 leading-none tracking-normal font-semibold text-black"
+              class="text-21 text-black dark:text-white leading-none tracking-normal font-semibold"
               >Apple Vision Pro</a
             >
 
             <div class="md:hidden flex items-center gap-4">
               <button id="popup-btn" class="transition-transform duration-300">
-                <svg viewBox="0 0 16 9" class="size-4">
+                <svg
+                  viewBox="0 0 16 9"
+                  class="w-4 stroke-black dark:stroke-white stroke-[1.5px]"
+                >
                   <polyline
                     shape-rendering="geometricPrecision"
                     data-chevron-icon-shape=""
-                    stroke="currentColor"
                     stroke-linecap="round"
                     vector-effect="non-scaling-stroke"
                     stroke-linejoin="round"
@@ -56,40 +58,40 @@
               </button>
               <a
                 href="https://www.apple.com/us/shop/goto/buy_vision/apple_vision_pro"
-                class="sf-pro-text text-xs py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white transition-all"
+                class="sf-pro-text text-xs py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white"
                 >Buy</a
               >
             </div>
           </div>
 
           <nav
-            class="md:min-w-fit w-full md:h-auto h-0 overflow-hidden md:pointer-events-auto pointer-events-none md:px-0 md:py-0 px-4"
+            class="md:min-w-fit w-full md:h-auto h-0 md:overflow-visible overflow-hidden md:pointer-events-auto pointer-events-none md:px-0 md:py-0 px-4"
           >
             <div
               class="w-full flex md:flex-row flex-col md:items-center items-start md:justify-end md:gap-6 gap-5 md:pt-0 pt-5 md:pb-0 pb-7"
             >
               <a
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:border-l-0 border-l-[1.5px] border-l-black text-black cursor-pointer relative md:after:content-[''] md:after:absolute md:after:bottom-[-18px] md:after:left-0 md:after:w-full md:after:h-[1px] md:after:bg-black"
+                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:border-l-0 border-l-[1.5px] border-l-black dark:border-l-white text-black dark:text-white cursor-pointer relative md:after:content-[''] md:after:absolute md:after:bottom-[-18px] md:after:left-0 md:after:w-full md:after:h-[1px] md:after:bg-black md:after:z-50"
                 >Overview</a
               >
               <a
                 href="https://www.apple.com/apple-vision-pro/guided-tour/"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black-2/80 md:hover:text-black-2"
+                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black/80 dark:md:text-white/80 md:hover:text-black dark:md:hover:text-white text-black dark:text-white"
                 >Guided Tour</a
               >
               <a
                 href="https://www.apple.com/apple-vision-pro/specs/"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black-2/80 md:hover:text-black-2"
+                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-0 pl-4 md:text-black/80 dark:md:text-white/80 md:hover:text-black dark:md:hover:text-white text-black dark:text-white"
                 >Tech Specs</a
               >
               <a
                 href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
-                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-2.5 pl-4 md:pr-2.5 md:py-1 md:border md:rounded-full hover:bg-black hover:text-white transition-all"
+                class="sf-pro-text md:leading-tight leading-none md:text-xs text-sm md:pl-2.5 pl-4 md:pr-2.5 md:py-1 md:border md:rounded-full hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black md:border-black dark:border-white text-black dark:text-white"
                 >Book a demo</a
               >
               <a
                 href="https://www.apple.com/us/shop/goto/buy_vision/apple_vision_pro"
-                class="sf-pro-text text-xs md:block hidden py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white transition-all"
+                class="sf-pro-text text-xs md:block hidden py-1 px-2.5 border rounded-full border-blue hover:bg-blue/90 bg-blue text-white"
                 >Buy</a
               >
             </div>
@@ -129,7 +131,7 @@
           </div>
 
           <div
-            class="absolute xl:bottom-[6.5%] sm:bottom-[7.5%] bottom-[10%] flex flex-col items-center gap-7 z-10 md:px-5 px-4"
+            class="absolute xl:bottom-[7%] sm:bottom-[8%] bottom-[10%] flex flex-col items-center gap-7 z-10 md:px-5 px-4"
           >
             <img
               src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
@@ -140,7 +142,7 @@
             <div class="flex flex-col items-center gap-2.5">
               <a
                 href="https://www.apple.com/retail/instore-shopping-session/session-selection/?topic=visionpro"
-                class="group flex items-center gap-1 text-orange fill-orange xl:text-2xl md:text-[1.1875rem] text-[1.0625rem] leading-none font-semibold"
+                class="group flex items-center gap-1 text-orange fill-orange xl:text-2xl md:text-xl text-lg leading-none font-semibold"
               >
                 <span class="group-hover:underline -mt-0.5">Book a demo</span>
                 <svg viewBox="0 0 320 512" class="xl:size-5 size-3.5">
@@ -152,7 +154,7 @@
 
               <a
                 href="https://www.apple.com/visionos/visionos-2/"
-                class="group flex items-center gap-1 text-orange fill-orange xl:text-2xl md:text-[1.1875rem] text-[1.0625rem] leading-none font-semibold"
+                class="group flex items-center gap-1 text-orange fill-orange xl:text-2xl md:text-xl text-lg leading-none font-semibold"
               >
                 <span class="group-hover:underline">
                   Learn more about visionOS 2</span
@@ -169,8 +171,39 @@
 
         <section
           id="foundation"
-          class="w-full height-full relative overflow-hidden"
+          class="w-full xl:height-full relative overflow-hidden"
         >
+          <div class="xl:hidden w-full flex flex-col items-center">
+            <div
+              class="w-full max-w-medium px-5 flex flex-col items-center gap-16 text-center text-white"
+            >
+              <h3 class="leading-[1.15] text-5xl font-bold">
+                Apple Vision Pro seamlessly blends digital content with your
+                physical space.
+              </h3>
+
+              <h3 class="leading-[1.15] text-5xl font-bold">
+                So you can work, watch, relive memories, and connect in ways
+                never before possible.
+              </h3>
+
+              <h3 class="leading-[1.15] text-5xl font-bold">
+                The era of spatial computing is here.
+              </h3>
+
+              <button
+                class="btn mt-5 text-orange fill-orange border-orange bg-transparent border-2 hover:bg-orange hover:text-white hover:fill-white"
+              >
+                <svg viewBox="0 0 512 512" class="size-5">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+                <span>Watch the film</span>
+              </button>
+            </div>
+          </div>
+
           <div class="size-full bg-black relative flex flex-col items-center">
             <button class="play-pause absolute top-5 right-5 z-10">
               <svg viewBox="0 0 512 512" class="size-9 fill-gray-2">
@@ -191,7 +224,7 @@
 
           <div
             id="foundation-content"
-            class="w-full flex flex-col items-center absolute z-10 top-full"
+            class="w-full hidden xl:flex flex-col items-center absolute z-10 top-full"
           >
             <div
               class="w-full max-w-screen-lg px-5 flex flex-col items-center gap-16 text-center text-white"
@@ -225,7 +258,7 @@
 
           <div
             id="intro"
-            class="w-full height-full flex flex-col items-center justify-center absolute z-10 top-full bg-white"
+            class="w-full height-full flex flex-col items-center justify-center xl:absolute xl:z-10 xl:top-full xl:bg-white"
           >
             <div
               id="intro-content"
@@ -240,7 +273,7 @@
               <video
                 id="intro-video"
                 src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/intro.mp4"
-                class="w-full object-contain"
+                class="xl:block hidden w-full object-contain"
                 muted
               ></video>
 

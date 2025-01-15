@@ -87,18 +87,6 @@
 
 @tailwind components;
 @layer components {
-  .color-black {
-    @apply text-black fill-black;
-  }
-
-  .color-secondry-black {
-    @apply text-black-2 fill-setext-black-2;
-  }
-
-  .color-white {
-    @apply text-white fill-white;
-  }
-
   .text-80 {
     @apply text-[5rem] font-bold leading-none;
   }
