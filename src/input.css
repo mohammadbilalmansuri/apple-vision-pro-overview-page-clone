@@ -2,38 +2,38 @@
 @layer base {
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-display-regular.woff2");
+    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-display-regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-display-semibold.woff2");
+    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-display-semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-display-bold.woff2");
+    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-display-bold.woff2");
     font-weight: 700;
     font-style: normal;
   }
 
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-text-light.woff2");
+    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-text-light.woff2");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-text-regular.woff2");
+    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-text-regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/applevisionpro/fonts/sf-pro-text-semibold.woff2");
+    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-text-semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
@@ -68,31 +68,31 @@
   }
 
   .text-56 {
-    @apply xl:text-[56px] lg:text-[50px] md:text-[44px] sm:text-[38px] text-[32px] leading-tight tracking-[0.01em] font-semibold;
+    @apply xl:text-[56px] lg:text-[50px] md:text-[44px] sm:text-[38px] text-[32px] leading-tight lg:tracking-[0.01em] font-semibold;
   }
 
   .text-48 {
-    @apply xl:text-[48px] lg:text-[42px] md:text-[36px] sm:text-[30px] text-[24px] leading-[1.15] tracking-[0.01em] font-bold;
+    @apply xl:text-[48px] lg:text-[42px] md:text-[36px] sm:text-[30px] text-[24px] leading-[1.15] lg:tracking-[0.01em] font-bold;
   }
 
   .text-32 {
-    @apply xl:text-[32px] lg:text-[29px] md:text-[26px] sm:text-[23px] text-[20px] leading-[1.15] tracking-[0.015em] font-bold;
+    @apply xl:text-[32px] lg:text-[29px] md:text-[26px] sm:text-[23px] text-[20px] leading-[1.15] lg:tracking-[0.01em] font-bold;
   }
 
   .text-24 {
-    @apply lg:text-[24px] md:text-[22px] sm:text-[20px] text-[18px] font-bold leading-none tracking-[0.01em];
+    @apply lg:text-[24px] md:text-[22px] sm:text-[20px] text-[18px] font-bold leading-none lg:tracking-[0.01em];
   }
 
   .text-19 {
-    @apply xl:text-[19px] text-[17px] leading-tight tracking-[0.015em];
+    @apply xl:text-[19px] text-[17px] leading-tight lg:tracking-[0.01em];
   }
 
   .text-21 {
-    @apply lg:text-[21px] sm:text-[19px] text-[17px] sm:font-display font-text leading-snug tracking-[0.015em];
+    @apply lg:text-[21px] sm:text-[19px] text-[17px] sm:font-display font-text leading-snug lg:tracking-[0.01em];
   }
 
   .btn {
-    @apply md:py-4 py-3 md:px-8 px-4 md:text-[19px] sm:text-[17px] text-[15px] leading-none tracking-[0.015em] font-semibold rounded-full transition-all flex items-center gap-2;
+    @apply md:py-4 py-3 md:px-8 px-4 md:text-[19px] sm:text-[17px] text-[15px] leading-none lg:tracking-[0.01em] font-semibold rounded-full transition-all flex items-center gap-2;
   }
 
   .btn-svg {
@@ -104,11 +104,11 @@
   }
 
   .play-pause-icon {
-    @apply xl:size-9 md:size-8 size-6 fill-white;
+    @apply xl:size-9 sm:size-8 size-7 fill-white;
   }
 
   .video-text {
-    @apply sm:text-sm text-xs font-semibold leading-tight text-white/90 flex items-center gap-2 absolute xl:right-10 md:right-7 xl:bottom-10 sm:bottom-7 bottom-5;
+    @apply font-text sm:text-sm text-xs font-semibold leading-tight text-white/90 flex items-center gap-2 absolute xl:right-10 md:right-7 xl:bottom-10 sm:bottom-7 bottom-5 md:text-left text-center;
   }
 }
 

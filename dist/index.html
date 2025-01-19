@@ -10,7 +10,7 @@
     />
     <link
       rel="shortcut icon"
-      href="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_favicon.webp"
+      href="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/apple_favicon.webp"
       type="image/x-icon"
     />
     <link
@@ -34,7 +34,7 @@
           >
             <a
               href="/"
-              class="text-21 text-black dark:text-white leading-none tracking-normal font-semibold"
+              class="md:text-[21px] text-[19px] text-black dark:text-white leading-none font-semibold"
               >Apple Vision Pro</a
             >
 
@@ -96,9 +96,9 @@
       </header>
 
       <main class="w-full relative">
-        <section
+        <!-- <section
           id="hero"
-          class="w-full h-dvh relative flex flex-col items-center overflow-hidden"
+          class="w-full h-screen relative flex flex-col items-center overflow-hidden"
         >
           <div class="size-full relative flex flex-col items-center">
             <button
@@ -113,14 +113,15 @@
 
             <video
               id="hero-video"
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/hero.mp4"
+              src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/hero.mp4"
               autoplay
               muted
+              preload="auto"
               class="xl:block hidden h-full object-cover object-center"
             ></video>
 
             <img
-              src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/hero.webp"
+              src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/hero.webp"
               alt="Hero Mobile Image"
               class="xl:hidden block h-full object-cover object-center"
             />
@@ -130,7 +131,7 @@
             class="absolute xl:bottom-[6%] lg:bottom-[7%] md:bottom-[8%] sm:bottom-[9%] bottom-[10%] flex flex-col items-center gap-7 z-10 px-5"
           >
             <img
-              src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
+              src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
               alt="Apple Vision Pro Logo"
               class="xl:max-w-96 lg:max-w-80 md:max-w-72 sm:max-w-64 max-w-56"
             />
@@ -214,10 +215,11 @@
 
             <video
               id="foundation-video"
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/foundation.mp4"
+              src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/foundation.mp4"
               class="size-full object-cover object-center xl:opacity-80"
               muted
               loop
+              preload="auto"
             ></video>
           </div>
 
@@ -230,16 +232,17 @@
               class="w-full xl:max-w-5xl flex flex-col items-center gap-10 px-5 xl:py-0 lg:py-32 sm:py-28 py-24"
             >
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/apple_vision_pro_logo.webp"
                 alt="Apple Vision Pro Logo"
                 class="xl:max-w-96 lg:max-w-80 md:max-w-72 sm:max-w-64 max-w-56"
               />
 
               <video
                 id="intro-video"
-                src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/intro.mp4"
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/intro.mp4"
                 class="xl:w-full lg:max-w-4xl md:max-w-2xl sm:max-w-lg xs:max-w-sm object-contain"
                 muted
+                preload="auto"
               ></video>
 
               <button
@@ -284,15 +287,16 @@
               </button>
 
               <video
-                src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/entertainment.mp4"
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/entertainment.mp4"
                 class="size-full object-cover object-center xl:opacity-80"
                 muted
                 loop
+                preload="auto"
               ></video>
 
               <a
                 href="https://tv.apple.com/us/movie/napoleon/umc.cmc.25k80oxl3vo69c8rimk8v81s1?itscg=10000&itsct=atv--vision_pro-stream3-apl-240610"
-                class="font-text video-text group"
+                class="video-text group"
               >
                 <span class="group-hover:underline"
                   >Stream <em>Napoleon</em> on Apple TV+</span
@@ -319,7 +323,7 @@
               <div
                 class="md:w-[65%] flex flex-col md:items-start items-center md:gap-12 gap-7"
               >
-                <p class="font-text text-21 font-semibold text-gray">
+                <p class="text-21 font-semibold text-gray">
                   Apple Vision Pro can transform any room into your own personal
                   theater. Expand your movies, shows, and games to your perfect
                   size and experience them in Spatial Audio. Apple Immersive
@@ -346,37 +350,44 @@
 
         <section id="productivity" class="w-full relative">
           <div
-            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full xl:h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center justify-center xl:pt-0 lg:pt-32 sm:pt-28 pt-24 xl:gap-0 lg:gap-20 sm:gap-16 gap-12 xl:px-0 lg:px-12 md:px-10 sm:px-8"
           >
-            <button class="play-pause">
-              <svg viewBox="0 0 512 512" class="play-pause-icon">
-                <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-            </button>
-
-            <video
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/productivity.mp4"
-              class="size-full object-cover object-center opacity-80"
-              muted
-              loop
-            ></video>
-
             <div
-              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+              class="heading px-5 flex flex-col gap-5 items-center text-center xl:absolute xl:z-10 xl:text-white"
             >
               <h5 class="text-24">Productivity</h5>
-              <h2 class="text-80 max-w-screen-md">
-                A workspace with infinite space.
-              </h2>
+              <h2 class="text-80">A workspace with infinite space.</h2>
+            </div>
+
+            <div
+              class="xl:size-full relative bg-black flex flex-col items-center"
+            >
+              <button class="play-pause">
+                <svg viewBox="0 0 512 512" class="play-pause-icon">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+              </button>
+
+              <video
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/productivity.mp4"
+                class="size-full object-cover object-center xl:opacity-80"
+                muted
+                loop
+                preload="auto"
+              ></video>
             </div>
           </div>
 
           <div class="w-full relative flex flex-col items-center">
-            <div class="w-full max-w-5xl relative px-5 pt-20 py-40 flex gap-20">
-              <h3 class="w-[35%] text-32">Discover new ways to work.</h3>
-              <div class="w-[65%] flex flex-col items-start gap-12">
+            <div
+              class="w-full max-w-5xl relative flex md:flex-row flex-col md:gap-20 gap-4 lg:pt-20 sm:pt-16 pt-12 xl:pb-40 lg:pb-32 sm:pb-28 pb-24 xl:px-5 lg:px-12 md:px-10 sm:px-8 px-5 md:items-start items-center md:text-left text-center"
+            >
+              <h3 class="md:w-[35%] text-32">Discover new ways to work.</h3>
+              <div
+                class="md:w-[65%] flex flex-col md:items-start items-center md:gap-12 gap-7"
+              >
                 <p class="text-21 font-semibold text-gray">
                   Apple Vision Pro gives you limitless space to get things done.
                   Organize everything you need anywhere around you, in any way
@@ -390,7 +401,7 @@
                 <button
                   class="btn bg-orange hover:bg-orange/90 text-white fill-white"
                 >
-                  <svg viewBox="0 0 448 512" class="size-5">
+                  <svg viewBox="0 0 448 512" class="btn-svg">
                     <path
                       d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
                     />
@@ -402,37 +413,49 @@
           </div>
         </section>
 
-        <section id="photos-videos" class="w-full relative">
+        <section
+          id="photos-videos"
+          class="w-full relative xl:bg-transparent bg-gray-2"
+        >
           <div
-            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full xl:h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center justify-center xl:pt-0 lg:pt-32 sm:pt-28 pt-24 xl:gap-0 lg:gap-20 sm:gap-16 gap-12 xl:px-0 lg:px-12 md:px-10 sm:px-8"
           >
-            <button class="play-pause">
-              <svg viewBox="0 0 512 512" class="play-pause-icon">
-                <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-            </button>
-
-            <video
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/photos-videos.mp4"
-              class="size-full object-cover object-center opacity-80"
-              muted
-              loop
-            ></video>
-
             <div
-              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+              class="heading px-5 flex flex-col gap-5 items-center text-center xl:absolute xl:z-10 xl:text-white"
             >
               <h5 class="text-24">Photos and Videos</h5>
               <h2 class="text-80">Be in the moment.<br />All over again.</h2>
             </div>
+
+            <div
+              class="xl:size-full relative bg-black flex flex-col items-center"
+            >
+              <button class="play-pause">
+                <svg viewBox="0 0 512 512" class="play-pause-icon">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+              </button>
+
+              <video
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/photos-videos.mp4"
+                class="size-full object-cover object-center xl:opacity-80"
+                muted
+                loop
+                preload="auto"
+              ></video>
+            </div>
           </div>
 
           <div class="w-full relative flex flex-col items-center">
-            <div class="w-full max-w-5xl relative px-5 pt-20 py-40 flex gap-20">
-              <h3 class="w-[35%] text-32">Your memories come alive.</h3>
-              <div class="w-[65%] flex flex-col items-start gap-12">
+            <div
+              class="w-full max-w-5xl relative flex md:flex-row flex-col md:gap-20 gap-4 lg:pt-20 sm:pt-16 pt-12 xl:pb-40 lg:pb-32 sm:pb-28 pb-24 xl:px-5 lg:px-12 md:px-10 sm:px-8 px-5 md:items-start items-center md:text-left text-center"
+            >
+              <h3 class="md:w-[35%] text-32">Your memories come alive.</h3>
+              <div
+                class="md:w-[65%] flex flex-col md:items-start items-center md:gap-12 gap-7"
+              >
                 <p class="text-21 font-semibold text-gray">
                   Apple Vision Pro is Apple's first 3D camera. You can capture
                   magical spatial photos and spatial videos in 3D, then relive
@@ -450,7 +473,7 @@
                 <button
                   class="btn bg-orange hover:bg-orange/90 text-white fill-white"
                 >
-                  <svg viewBox="0 0 448 512" class="size-5">
+                  <svg viewBox="0 0 448 512" class="btn-svg">
                     <path
                       d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
                     />
@@ -464,37 +487,46 @@
 
         <section id="connection" class="w-full relative">
           <div
-            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full xl:h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center justify-center xl:pt-0 lg:pt-32 sm:pt-28 pt-24 xl:gap-0 lg:gap-20 sm:gap-16 gap-12 xl:px-0 lg:px-12 md:px-10 sm:px-8"
           >
-            <button class="play-pause">
-              <svg viewBox="0 0 512 512" class="play-pause-icon">
-                <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-            </button>
-
-            <video
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/connection.mp4"
-              class="size-full object-cover object-center opacity-80"
-              muted
-              loop
-            ></video>
-
             <div
-              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+              class="heading px-5 flex flex-col gap-5 items-center text-center xl:absolute xl:z-10 xl:text-white"
             >
               <h5 class="text-24">Connection</h5>
               <h2 class="text-80">Share quality time.<br />And space.</h2>
             </div>
+
+            <div
+              class="xl:size-full relative bg-black flex flex-col items-center"
+            >
+              <button class="play-pause">
+                <svg viewBox="0 0 512 512" class="play-pause-icon">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+              </button>
+
+              <video
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/connection.mp4"
+                class="size-full object-cover object-center xl:opacity-80"
+                muted
+                loop
+                preload="auto"
+              ></video>
+            </div>
           </div>
 
           <div class="w-full relative flex flex-col items-center">
-            <div class="w-full max-w-5xl relative px-5 pt-20 py-40 flex gap-20">
-              <h3 class="w-[35%] text-32">
+            <div
+              class="w-full max-w-5xl relative flex md:flex-row flex-col md:gap-20 gap-4 lg:pt-20 sm:pt-16 pt-12 xl:pb-40 lg:pb-32 sm:pb-28 pb-24 xl:px-5 lg:px-12 md:px-10 sm:px-8 px-5 md:items-start items-center md:text-left text-center"
+            >
+              <h3 class="md:w-[35%] text-32">
                 A more engaging way to get together.
               </h3>
-              <div class="w-[65%] flex flex-col items-start gap-12">
+              <div
+                class="md:w-[65%] flex flex-col md:items-start items-center md:gap-12 gap-7"
+              >
                 <p class="text-21 font-semibold text-gray">
                   Apple Vision Pro makes it easy to collaborate and connect
                   wherever you are. You can see FaceTime participants in
@@ -507,7 +539,7 @@
                 <button
                   class="btn bg-orange hover:bg-orange/90 text-white fill-white"
                 >
-                  <svg viewBox="0 0 448 512" class="size-5">
+                  <svg viewBox="0 0 448 512" class="btn-svg">
                     <path
                       d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
                     />
@@ -519,47 +551,56 @@
           </div>
         </section>
 
-        <section id="apps" class="w-full relative">
+        <section id="apps" class="w-full relative xl:bg-transparent bg-gray-2">
           <div
-            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full xl:h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center justify-center xl:pt-0 lg:pt-32 sm:pt-28 pt-24 xl:gap-0 lg:gap-20 sm:gap-16 gap-12 xl:px-0 lg:px-12 md:px-10 sm:px-8"
           >
-            <button class="play-pause">
-              <svg viewBox="0 0 512 512" class="play-pause-icon">
-                <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-            </button>
-
-            <video
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/apps.mp4"
-              class="size-full object-cover object-center opacity-80"
-              muted
-              loop
-            ></video>
-
             <div
-              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+              class="heading px-5 flex flex-col gap-5 items-center text-center xl:absolute xl:z-10 xl:text-white"
             >
               <h5 class="text-24">Apps</h5>
-              <h2 class="text-80 max-w-screen-md">
+              <h2 class="text-80">
                 Do what you love.<br />Reimagine how you do it.
               </h2>
             </div>
 
-            <p class="sf-text-pro video-text group">
-              Featured apps:<br />Game Room; Kung Fu Panda: School of Chi;
-              myMako.*<br />*For informational purposes only. Not for diagnostic
-              use.
-            </p>
+            <div
+              class="xl:size-full relative bg-black flex flex-col items-center"
+            >
+              <button class="play-pause">
+                <svg viewBox="0 0 512 512" class="play-pause-icon">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+              </button>
+
+              <video
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/apps.mp4"
+                class="size-full object-cover object-center xl:opacity-80"
+                muted
+                loop
+                preload="auto"
+              ></video>
+
+              <p class="video-text">
+                Featured apps:<br />Game Room; Kung Fu Panda: School of Chi;
+                myMako.*<br />*For informational purposes only. Not for
+                diagnostic use.
+              </p>
+            </div>
           </div>
 
           <div class="w-full relative flex flex-col items-center">
-            <div class="w-full max-w-5xl relative px-5 pt-20 py-40 flex gap-20">
-              <h3 class="w-[35%] text-32">
+            <div
+              class="w-full max-w-5xl relative flex md:flex-row flex-col md:gap-20 gap-4 lg:pt-20 sm:pt-16 pt-12 xl:pb-40 lg:pb-32 sm:pb-28 pb-24 xl:px-5 lg:px-12 md:px-10 sm:px-8 px-5 md:items-start items-center md:text-left text-center"
+            >
+              <h3 class="md:w-[35%] text-32">
                 A world of apps.<br />A world of discovery.
               </h3>
-              <div class="w-[65%] flex flex-col items-start gap-5">
+              <div
+                class="md:w-[65%] flex flex-col md:items-start items-center md:gap-12 gap-7"
+              >
                 <p class="text-21 font-semibold text-gray">
                   Apple Vision Pro expands the experience of your go-to apps and
                   opens up new possibilities in entertainment, productivity,
@@ -572,12 +613,14 @@
 
                 <a
                   href="https://apps.apple.com/us/vision"
-                  class="text-21 text-blue group flex items-center gap-2 mb-7"
+                  class="text-21 leading-none text-blue group flex items-center gap-1.5 md:-mt-5 -mt-2"
                 >
-                  <span class="group-hover:underline">Visit the App Store</span>
+                  <span class="group-hover:underline -mt-0.5"
+                    >Visit the App Store</span
+                  >
                   <svg
                     viewBox="0 0 448 512"
-                    class="size-3 fill-blue -rotate-45"
+                    class="sm:size-4 size-3.5 fill-blue -rotate-45"
                   >
                     <path
                       d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
@@ -588,7 +631,7 @@
                 <button
                   class="btn bg-orange hover:bg-orange/90 text-white fill-white"
                 >
-                  <svg viewBox="0 0 448 512" class="size-5">
+                  <svg viewBox="0 0 448 512" class="btn-svg">
                     <path
                       d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
                     />
@@ -598,43 +641,50 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <section id="visionOS" class="w-full relative">
           <div
-            class="video-div w-full h-[calc(100dvh-var(--header-height))] bg-black relative flex flex-col items-center justify-center"
+            class="video-div w-full xl:h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center justify-center xl:pt-0 lg:pt-32 sm:pt-28 pt-24 xl:gap-0 lg:gap-20 sm:gap-16 gap-12 xl:px-0 lg:px-12 md:px-10 sm:px-8"
           >
-            <button class="play-pause">
-              <svg viewBox="0 0 512 512" class="play-pause-icon">
-                <path
-                  d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
-                />
-              </svg>
-            </button>
-
-            <video
-              src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/visionOS.mp4"
-              class="size-full object-cover object-center opacity-80"
-              muted
-              loop
-            ></video>
-
             <div
-              class="heading absolute flex flex-col gap-5 items-center text-center text-white"
+              class="heading px-5 flex flex-col gap-5 items-center text-center xl:absolute xl:z-10 xl:text-white"
             >
               <h5 class="text-24">visionOS</h5>
-              <h2 class="text-80 max-w-screen-md">
-                An operating system designed for spatial.
-              </h2>
+              <h2 class="text-80">An operating system designed for spatial.</h2>
+            </div>
+
+            <div
+              class="xl:size-full relative bg-black flex flex-col items-center"
+            >
+              <button class="play-pause">
+                <svg viewBox="0 0 512 512" class="play-pause-icon">
+                  <path
+                    d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+                  />
+                </svg>
+              </button>
+
+              <video
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/visionOS.mp4"
+                class="size-full object-cover object-center xl:opacity-80"
+                muted
+                loop
+                preload="auto"
+              ></video>
             </div>
           </div>
 
           <div class="w-full relative flex flex-col items-center">
-            <div class="w-full max-w-5xl relative px-5 pt-20 py-40 flex gap-20">
-              <h3 class="w-[35%] text-32">
+            <div
+              class="w-full max-w-5xl relative flex md:flex-row flex-col md:gap-20 gap-4 lg:pt-20 sm:pt-16 pt-12 xl:pb-40 lg:pb-32 sm:pb-28 pb-24 xl:px-5 lg:px-12 md:px-10 sm:px-8 px-5 md:items-start items-center md:text-left text-center"
+            >
+              <h3 class="md:w-[35%] text-32">
                 Navigate spatial experiences. Naturally.
               </h3>
-              <div class="w-[65%] flex flex-col items-start gap-5">
+              <div
+                class="md:w-[65%] flex flex-col md:items-start items-center md:gap-12 gap-7"
+              >
                 <p class="text-21 font-semibold text-gray">
                   Built on the foundation of macOS, iOS, and iPadOS, visionOS
                   enables powerful spatial experiences. Control Apple Vision Pro
@@ -648,12 +698,15 @@
 
                 <a
                   href="https://www.apple.com/visionos/visionos-2/"
-                  class="text-21 text-blue group flex items-center gap-2 mb-7"
+                  class="text-21 leading-none text-blue group flex items-center gap-1.5 md:-mt-5 -mt-2"
                 >
                   <span class="group-hover:underline"
                     >Learn more about visionOS 2</span
                   >
-                  <svg viewBox="0 0 320 512" class="size-5 fill-blue">
+                  <svg
+                    viewBox="0 0 448 512"
+                    class="sm:size-4 size-3.5 fill-blue"
+                  >
                     <path
                       d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
                     />
@@ -663,7 +716,7 @@
                 <button
                   class="btn bg-orange hover:bg-orange/90 text-white fill-white"
                 >
-                  <svg viewBox="0 0 448 512" class="size-5">
+                  <svg viewBox="0 0 448 512" class="btn-svg">
                     <path
                       d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
                     />
@@ -703,6 +756,7 @@
               class="w-full 2xl:max-w-screen-xl max-w-5xl h-[calc(100dvh-var(--header-height))] relative flex flex-col items-center"
             >
               <canvas id="design-canvas" class="size-full relative"></canvas>
+
               <div class="w-full flex justify-between items-start">
                 <div class="w-56 relative flex flex-col items-start">
                   <p class="text-19 text-gray font-semibold absolute">
@@ -752,11 +806,11 @@
           >
             <div class="w-full relative grid grid-cols-2 gap-10">
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/glass_top.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/glass_top.webp"
                 alt="Apple Vision Pro Glass Top"
               />
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/glass_side.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/glass_side.webp"
                 alt="Apple Vision Pro Glass Side"
               />
               <div class="w-full relative col-span-2">
@@ -769,10 +823,11 @@
                 </button>
 
                 <video
-                  src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/glass.mp4"
+                  src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/glass.mp4"
                   autoplay
                   loop
                   muted
+                  preload="auto"
                 ></video>
               </div>
             </div>
@@ -794,7 +849,7 @@
 
             <div class="w-full px-48 relative flex flex-col items-center">
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/light_seal.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/light_seal.webp"
                 alt="Apple Vision Pro Light Seal"
               />
 
@@ -844,7 +899,7 @@
               </p>
 
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/display.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/display.webp"
                 alt="Display"
                 class="w-full my-10"
               />
@@ -867,9 +922,10 @@
               class="w-full px-10 relative flex flex-col items-center -mt-20"
             >
               <video
-                src="https://res.cloudinary.com/mohammadbilalmansuri/video/upload/applevisionpro/videos/spatial-audio.mp4"
+                src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/spatial-audio.mp4"
                 muted
                 autoplay
+                preload="auto"
                 class="w-full"
               ></video>
 
@@ -900,7 +956,7 @@
               class="w-full max-w-5xl relative flex flex-col items-center gap-16 text-center"
             >
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/eye_tracking.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/eye_tracking.webp"
                 alt="Eye Tracing"
                 class="w-full"
               />
@@ -925,7 +981,7 @@
               class="w-full max-w-5xl relative flex flex-col items-center gap-16 text-center"
             >
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/sensors.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/sensors.webp"
                 alt="All Sensors"
                 class="w-full"
               />
@@ -949,7 +1005,7 @@
               class="w-full max-w-screen-xl relative flex flex-col items-center gap-20 text-center"
             >
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/sensors_chips.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/sensors_chips.webp"
                 alt="Sensors Chips"
                 class="w-full"
               />
@@ -1022,7 +1078,7 @@
               <div class="w-[45%] flex flex-col gap-5">
                 <img
                   class="size-[3.25rem]"
-                  src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/ar_logo.webp"
+                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/ar_logo.webp"
                   alt="AR Logo"
                 />
                 <h2 class="text-56 font-semibold">
@@ -1037,7 +1093,7 @@
 
               <div class="w-[55%] pt-40">
                 <img
-                  src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/ar_tile.webp"
+                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/ar_tile.webp"
                   alt="AR Tile"
                   class="w-full"
                 />
@@ -1064,7 +1120,7 @@
 
               <div class="w-[55%]">
                 <img
-                  src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/accessories.webp"
+                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/accessories.webp"
                   alt="Accessories"
                   class="w-full"
                 />
@@ -1075,7 +1131,7 @@
               class="w-full bg-gray-2 flex flex-col gap-5 items-center text-center py-40 mb-10"
             >
               <img
-                src="https://res.cloudinary.com/mohammadbilalmansuri/image/upload/applevisionpro/images/developers.webp"
+                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/developers.webp"
                 alt="Accessories"
                 class="w-full max-w-screen-sm px-10 py-5"
               />
