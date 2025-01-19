@@ -29,8 +29,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['"SF Pro Display"', '"SF Pro Text"', "sans-serif"],
-        text: ['"SF Pro Text"', '"SF Pro Display"', "sans-serif"],
+        display: '"SF Pro Display", "SF Pro Text"',
+        text: '"SF Pro Text", "SF Pro Display"',
       },
     },
   },
