@@ -354,212 +354,225 @@
   // Design Section Canvas Animations
   function setDesignSectionCanvasAnimation() {
     const canvas = document.getElementById("design-canvas");
-    const context = canvas.getContext("2d");
+    if (mediaQuery.matches) {
+      const context = canvas.getContext("2d");
 
-    const setCanvasSize = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-    };
+      const setCanvasSize = () => {
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+      };
 
-    setCanvasSize();
+      setCanvasSize();
 
-    const imageUrls = Array.from(
-      { length: 198 },
-      (_, i) =>
-        `https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/design/${i}.webp`
-    );
-
-    const images = new Map();
-    const imageSeq = { frame: 0 };
-
-    ScrollTrigger.create({
-      trigger: "#design",
-      scroller: "body",
-      start: "top bottom",
-      end: "top bottom",
-      onEnter: async () => {
-        const promises = imageUrls.map(
-          (src) =>
-            new Promise((resolve) => {
-              const img = new Image();
-              img.src = src;
-              img.onload = () => resolve(img);
-            })
-        );
-
-        const loadedImages = await Promise.all(promises);
-        loadedImages.forEach((img, index) => images.set(index, img));
-        requestAnimationFrame(render);
-      },
-    });
-
-    function render() {
-      const img = images.get(imageSeq.frame) || images.get(0);
-      if (img) drawImageOnCanvas(img);
-    }
-
-    function drawImageOnCanvas(img) {
-      const canvas = context.canvas;
-      const ratio = canvas.height / img.height;
-      const offsetX = (canvas.width - img.width * ratio) / 2;
-      context.clearRect(0, 0, canvas.width, canvas.height);
-      context.drawImage(
-        img,
-        0,
-        0,
-        img.width,
-        img.height,
-        offsetX,
-        0,
-        img.width * ratio,
-        canvas.height
+      const imageUrls = Array.from(
+        { length: 198 },
+        (_, i) =>
+          `https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/design/${i}.webp`
       );
-    }
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#design-main",
-          scroller: "body",
-          start: "top bottom",
-          end: `top ${headerHeight}`,
-          scrub: true,
-          onUpdate: () => requestAnimationFrame(render),
-        },
-      })
-      .to(imageSeq, {
-        frame: 20,
-        snap: "frame",
-        ease: "none",
-      });
+      const images = new Map();
+      const imageSeq = { frame: 0 };
 
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#design-main",
-          scroller: "body",
-          start: `top ${headerHeight}`,
-          end: "top -300%",
-          scrub: true,
-          pin: true,
-          onUpdate: () => requestAnimationFrame(render),
-        },
-      })
-      .to(imageSeq, {
-        frame: 197,
-        snap: "frame",
-        ease: "none",
-      });
+      ScrollTrigger.create({
+        trigger: "#design",
+        scroller: "body",
+        start: "top bottom",
+        end: "top bottom",
+        onEnter: async () => {
+          const promises = imageUrls.map(
+            (src) =>
+              new Promise((resolve) => {
+                const img = new Image();
+                img.src = src;
+                img.onload = () => resolve(img);
+              })
+          );
 
-    gsap
-      .timeline({
-        ease: "power2.in",
-        scrollTrigger: {
-          trigger: "#design-main",
-          scroller: "body",
-          start: `top ${headerHeight}`,
-          end: "top -300%",
-          scrub: true,
-        },
-      })
-      .to("#design-texts p:nth-child(1)", {
-        zIndex: 2,
-        opacity: 1,
-      })
-      .to("#design-texts p:nth-child(1)", {
-        y: -100,
-      })
-      .to("#design-texts p:nth-child(1)", {
-        opacity: 0,
-        zIndex: 1,
-      })
-      .to(
-        "#design-texts p:nth-child(2)",
-        {
-          zIndex: 2,
-          opacity: 1,
-        },
-        "+=300%"
-      )
-      .to("#design-texts p:nth-child(2)", {
-        y: -100,
-      })
-      .to("#design-texts p:nth-child(2)", {
-        opacity: 0,
-        zIndex: 1,
-      })
-      .to(
-        "#design-texts p:nth-child(3)",
-        {
-          zIndex: 2,
-          opacity: 1,
-        },
-        "+=200%"
-      )
-      .to("#design-texts p:nth-child(3)", {
-        y: -150,
-      })
-      .to("#design-texts p:nth-child(3)", {
-        opacity: 0,
-        zIndex: 1,
-      })
-      .to(
-        "#design-texts p:nth-child(4)",
-        {
-          zIndex: 2,
-          opacity: 1,
-        },
-        "+=400%"
-      )
-      .to("#design-texts p:nth-child(4)", {
-        y: -100,
-      })
-      .to("#design-texts p:nth-child(4)", {
-        opacity: 0,
-        zIndex: 1,
-      })
-      .to(
-        "#design-texts p:nth-child(5)",
-        {
-          zIndex: 2,
-          opacity: 1,
-        },
-        "+=100%"
-      )
-      .to("#design-texts p:nth-child(5)", {
-        y: -100,
-      })
-      .to("#design-texts p:nth-child(5)", {
-        opacity: 0,
-        zIndex: 1,
-      })
-      .to(
-        "#design-texts p:nth-child(6)",
-        {
-          zIndex: 2,
-          opacity: 1,
-        },
-        "+=100%"
-      )
-      .to("#design-texts p:nth-child(6)", {
-        y: -100,
-      })
-      .to("#design-texts p:nth-child(6)", {
-        opacity: 0,
-        zIndex: 1,
-      });
-
-    let lastWidth = window.innerWidth;
-    new ResizeObserver(() => {
-      debounce(() => {
-        const currentWidth = window.innerWidth;
-        if (lastWidth !== currentWidth) {
-          lastWidth = currentWidth;
-          setCanvasSize();
+          const loadedImages = await Promise.all(promises);
+          loadedImages.forEach((img, index) => images.set(index, img));
           requestAnimationFrame(render);
-        }
-      }, 50);
-    }).observe(canvas);
+        },
+      });
+
+      function render() {
+        const img = images.get(imageSeq.frame) || images.get(0);
+        if (img) drawImageOnCanvas(img);
+      }
+
+      function drawImageOnCanvas(img) {
+        const canvas = context.canvas;
+        const ratio = canvas.height / img.height;
+        const offsetX = (canvas.width - img.width * ratio) / 2;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(
+          img,
+          0,
+          0,
+          img.width,
+          img.height,
+          offsetX,
+          0,
+          img.width * ratio,
+          canvas.height
+        );
+      }
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#design-main",
+            scroller: "body",
+            start: "top bottom",
+            end: `top ${headerHeight}`,
+            scrub: true,
+            onUpdate: () => requestAnimationFrame(render),
+          },
+        })
+        .to(imageSeq, {
+          frame: 20,
+          snap: "frame",
+          ease: "none",
+        });
+
+      gsap
+        .timeline({
+          scrollTrigger: {
+            trigger: "#design-main",
+            scroller: "body",
+            start: `top ${headerHeight}`,
+            end: "top -300%",
+            scrub: true,
+            pin: true,
+            onUpdate: () => requestAnimationFrame(render),
+          },
+        })
+        .to(imageSeq, {
+          frame: 197,
+          snap: "frame",
+          ease: "none",
+        });
+
+      gsap
+        .timeline({
+          ease: "power2.in",
+          scrollTrigger: {
+            trigger: "#design-main",
+            scroller: "body",
+            start: `top ${headerHeight}`,
+            end: "top -300%",
+            scrub: true,
+          },
+        })
+        .to("#design-texts p:nth-child(1)", {
+          zIndex: 2,
+          opacity: 1,
+        })
+        .to("#design-texts p:nth-child(1)", {
+          y: -100,
+        })
+        .to("#design-texts p:nth-child(1)", {
+          opacity: 0,
+          zIndex: 1,
+        })
+        .to(
+          "#design-texts p:nth-child(2)",
+          {
+            zIndex: 2,
+            opacity: 1,
+          },
+          "+=300%"
+        )
+        .to("#design-texts p:nth-child(2)", {
+          y: -100,
+        })
+        .to("#design-texts p:nth-child(2)", {
+          opacity: 0,
+          zIndex: 1,
+        })
+        .to(
+          "#design-texts p:nth-child(3)",
+          {
+            zIndex: 2,
+            opacity: 1,
+          },
+          "+=200%"
+        )
+        .to("#design-texts p:nth-child(3)", {
+          y: -150,
+        })
+        .to("#design-texts p:nth-child(3)", {
+          opacity: 0,
+          zIndex: 1,
+        })
+        .to(
+          "#design-texts p:nth-child(4)",
+          {
+            zIndex: 2,
+            opacity: 1,
+          },
+          "+=400%"
+        )
+        .to("#design-texts p:nth-child(4)", {
+          y: -100,
+        })
+        .to("#design-texts p:nth-child(4)", {
+          opacity: 0,
+          zIndex: 1,
+        })
+        .to(
+          "#design-texts p:nth-child(5)",
+          {
+            zIndex: 2,
+            opacity: 1,
+          },
+          "+=100%"
+        )
+        .to("#design-texts p:nth-child(5)", {
+          y: -100,
+        })
+        .to("#design-texts p:nth-child(5)", {
+          opacity: 0,
+          zIndex: 1,
+        })
+        .to(
+          "#design-texts p:nth-child(6)",
+          {
+            zIndex: 2,
+            opacity: 1,
+          },
+          "+=100%"
+        )
+        .to("#design-texts p:nth-child(6)", {
+          y: -100,
+        })
+        .to("#design-texts p:nth-child(6)", {
+          opacity: 0,
+          zIndex: 1,
+        });
+
+      let lastWidth = window.innerWidth;
+      const resizeObserver = new ResizeObserver(() => {
+        debounce(() => {
+          const currentWidth = window.innerWidth;
+          if (lastWidth !== currentWidth) {
+            lastWidth = currentWidth;
+            setCanvasSize();
+            requestAnimationFrame(render);
+            console.log("Resized");
+          }
+        }, 50);
+      });
+
+      resizeObserver.observe(canvas);
+    } else {
+      const canvas = document.getElementById("design-canvas");
+      if (canvas) {
+        const resizeObserver = new ResizeObserver(() => {
+          console.log("Resized");
+        });
+        resizeObserver.unobserve(canvas);
+      }
+    }
   }
 
   function initializeSectionLogic() {
@@ -576,6 +589,9 @@
     document
       .querySelectorAll(".pin-spacer")
       .forEach((spacer) => spacer.remove());
+    document
+      .querySelectorAll("[style]")
+      .forEach((element) => element.removeAttribute("style"));
     ScrollTrigger.refresh();
     initializeSectionLogic();
   };
