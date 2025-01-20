@@ -592,6 +592,7 @@
     document
       .querySelectorAll("[style]")
       .forEach((element) => element.removeAttribute("style"));
+    headerHeight = header.offsetHeight;
     ScrollTrigger.refresh();
     initializeSectionLogic();
   };

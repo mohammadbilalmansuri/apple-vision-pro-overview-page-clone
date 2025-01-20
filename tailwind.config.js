@@ -33,6 +33,9 @@ export default {
         display: '"SF Pro Display", "SF Pro Text"',
         text: '"SF Pro Text", "SF Pro Display"',
       },
+      spacing: {
+        18: "4.5rem",
+      },
     },
   },
   plugins: [],
