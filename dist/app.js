@@ -353,13 +353,12 @@
 
   // Design Section Canvas Animations
   function setDesignSectionCanvasAnimation() {
-    const canvasElem = document.getElementById("design-canvas");
-    const context = canvasElem.getContext("2d");
+    const canvas = document.getElementById("design-canvas");
+    const context = canvas.getContext("2d");
 
     const setCanvasSize = () => {
-      const canvas = context.canvas;
-      canvas.width = canvasElem.offsetWidth;
-      canvas.height = canvasElem.offsetHeight;
+      canvas.width = canvas.offsetWidth;
+      canvas.height = canvas.offsetHeight;
     };
 
     setCanvasSize();
@@ -372,16 +371,6 @@
 
     const images = new Map();
     const imageSeq = { frame: 0 };
-
-    const headerHeight = document.querySelector("header")?.offsetHeight || 100;
-
-    const debounce = (func, delay) => {
-      let timeout;
-      return (...args) => {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func(...args), delay);
-      };
-    };
 
     ScrollTrigger.create({
       trigger: "#design",
@@ -411,12 +400,8 @@
 
     function drawImageOnCanvas(img) {
       const canvas = context.canvas;
-      const ratio = Math.max(
-        canvas.width / img.width,
-        canvas.height / img.height
-      );
-      const shiftX = (canvas.width - img.width * ratio) / 2;
-
+      const ratio = canvas.height / img.height;
+      const offsetX = (canvas.width - img.width * ratio) / 2;
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.drawImage(
         img,
@@ -424,18 +409,17 @@
         0,
         img.width,
         img.height,
-        shiftX,
+        offsetX,
         0,
         img.width * ratio,
-        img.height * ratio
+        canvas.height
       );
     }
 
-    // Frame 0 to 20
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: "#design-canvas-div",
+          trigger: "#design-main",
           scroller: "body",
           start: "top bottom",
           end: `top ${headerHeight}`,
@@ -443,32 +427,19 @@
           onUpdate: () => requestAnimationFrame(render),
         },
       })
-      .to(
-        imageSeq,
-        {
-          frame: 20,
-          snap: "frame",
-          ease: "none",
-        },
-        "initial"
-      )
-      .from(
-        "#design-canvas",
-        {
-          scale: 0.8,
-          ease: "none",
-        },
-        "initial"
-      );
+      .to(imageSeq, {
+        frame: 20,
+        snap: "frame",
+        ease: "none",
+      });
 
-    // Frame 21 to Last Frame
     gsap
       .timeline({
         scrollTrigger: {
-          trigger: "#design-canvas-div",
+          trigger: "#design-main",
           scroller: "body",
           start: `top ${headerHeight}`,
-          end: "top -600%",
+          end: "top -300%",
           scrub: true,
           pin: true,
           onUpdate: () => requestAnimationFrame(render),
@@ -480,6 +451,104 @@
         ease: "none",
       });
 
+    gsap
+      .timeline({
+        ease: "power2.in",
+        scrollTrigger: {
+          trigger: "#design-main",
+          scroller: "body",
+          start: `top ${headerHeight}`,
+          end: "top -300%",
+          scrub: true,
+        },
+      })
+      .to("#design-texts p:nth-child(1)", {
+        zIndex: 2,
+        opacity: 1,
+      })
+      .to("#design-texts p:nth-child(1)", {
+        y: -100,
+      })
+      .to("#design-texts p:nth-child(1)", {
+        opacity: 0,
+        zIndex: 1,
+      })
+      .to(
+        "#design-texts p:nth-child(2)",
+        {
+          zIndex: 2,
+          opacity: 1,
+        },
+        "+=300%"
+      )
+      .to("#design-texts p:nth-child(2)", {
+        y: -100,
+      })
+      .to("#design-texts p:nth-child(2)", {
+        opacity: 0,
+        zIndex: 1,
+      })
+      .to(
+        "#design-texts p:nth-child(3)",
+        {
+          zIndex: 2,
+          opacity: 1,
+        },
+        "+=200%"
+      )
+      .to("#design-texts p:nth-child(3)", {
+        y: -150,
+      })
+      .to("#design-texts p:nth-child(3)", {
+        opacity: 0,
+        zIndex: 1,
+      })
+      .to(
+        "#design-texts p:nth-child(4)",
+        {
+          zIndex: 2,
+          opacity: 1,
+        },
+        "+=400%"
+      )
+      .to("#design-texts p:nth-child(4)", {
+        y: -100,
+      })
+      .to("#design-texts p:nth-child(4)", {
+        opacity: 0,
+        zIndex: 1,
+      })
+      .to(
+        "#design-texts p:nth-child(5)",
+        {
+          zIndex: 2,
+          opacity: 1,
+        },
+        "+=100%"
+      )
+      .to("#design-texts p:nth-child(5)", {
+        y: -100,
+      })
+      .to("#design-texts p:nth-child(5)", {
+        opacity: 0,
+        zIndex: 1,
+      })
+      .to(
+        "#design-texts p:nth-child(6)",
+        {
+          zIndex: 2,
+          opacity: 1,
+        },
+        "+=100%"
+      )
+      .to("#design-texts p:nth-child(6)", {
+        y: -100,
+      })
+      .to("#design-texts p:nth-child(6)", {
+        opacity: 0,
+        zIndex: 1,
+      });
+
     let lastWidth = window.innerWidth;
     new ResizeObserver(() => {
       debounce(() => {
@@ -489,8 +558,8 @@
           setCanvasSize();
           requestAnimationFrame(render);
         }
-      }, 100);
-    }).observe(document.body);
+      }, 50);
+    }).observe(canvas);
   }
 
   function initializeSectionLogic() {
@@ -502,8 +571,7 @@
     ScrollTrigger.refresh();
   }
 
-  // Reset Function: Clears State and Re-initializes Everything
-  const resetApp = () => {
+  const reset = () => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     document
       .querySelectorAll(".pin-spacer")
@@ -512,6 +580,6 @@
     initializeSectionLogic();
   };
 
-  mediaQuery.addEventListener("change", resetApp);
+  mediaQuery.addEventListener("change", reset);
   initializeSectionLogic();
 })();

@@ -26,6 +26,7 @@ export default {
       lg: "1040px",
       xl: "1240px",
       "2xl": "1440px",
+      "3xl": "1640px",
     },
     extend: {
       fontFamily: {
