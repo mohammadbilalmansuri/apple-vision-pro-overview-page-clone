@@ -63,32 +63,32 @@
 
 @tailwind components;
 @layer components {
-  .text-80 {
+  .text-1 {
     @apply 2xl:text-[80px] xl:text-[72px] lg:text-[64px] md:text-[56px] sm:text-[48px] text-[40px] leading-[1.1] font-bold;
   }
 
-  .text-56 {
+  .text-2 {
     @apply xl:text-[56px] lg:text-[50px] md:text-[44px] sm:text-[38px] text-[32px] leading-tight lg:tracking-[0.01em] font-semibold;
   }
 
-  .text-48 {
+  .text-3 {
     @apply xl:text-[48px] lg:text-[42px] md:text-[36px] sm:text-[30px] text-[24px] leading-[1.15] lg:tracking-[0.01em] font-bold;
   }
 
-  .text-32 {
+  .text-4 {
     @apply xl:text-[32px] lg:text-[29px] md:text-[26px] sm:text-[23px] text-[20px] leading-[1.15] lg:tracking-[0.01em] font-bold;
   }
 
-  .text-24 {
+  .text-5 {
     @apply lg:text-[24px] md:text-[22px] sm:text-[20px] text-[18px] font-bold leading-none lg:tracking-[0.01em];
   }
 
-  .text-19 {
-    @apply xl:text-[19px] text-[17px] leading-tight lg:tracking-[0.01em];
+  .text-6 {
+    @apply lg:text-[21px] sm:text-[19px] text-[17px] sm:font-display font-text leading-snug lg:tracking-[0.01em];
   }
 
-  .text-21 {
-    @apply lg:text-[21px] sm:text-[19px] text-[17px] sm:font-display font-text leading-snug lg:tracking-[0.01em];
+  .text-7 {
+    @apply lg:text-[20px] text-[18px] leading-tight lg:tracking-[0.01em];
   }
 
   .btn {
