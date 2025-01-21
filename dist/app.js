@@ -72,7 +72,7 @@
       trigger: "#technology",
       scroller: "body",
       start: `top ${headerHeight}`,
-      end: "bottom top",
+      end: `bottom ${headerHeight}`,
       onEnter: () => document.documentElement.classList.add("dark"),
       onLeaveBack: () => document.documentElement.classList.remove("dark"),
       onEnterBack: () => document.documentElement.classList.add("dark"),
