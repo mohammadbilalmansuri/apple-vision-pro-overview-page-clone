@@ -1145,6 +1145,10 @@ video {
   max-width: 15rem;
 }
 
+.max-w-\[1300px\] {
+  max-width: 1300px;
+}
+
 .max-w-\[1500px\] {
   max-width: 1500px;
 }
@@ -1155,10 +1159,6 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
-}
-
-.max-w-screen-lg {
-  max-width: 1040px;
 }
 
 .max-w-xs {
