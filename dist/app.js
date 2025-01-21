@@ -24,6 +24,8 @@
   let isPopupOpen = false;
   const headerDiv = document.getElementById("header-div");
 
+  const onPopupOpenScrollHandler = () => isPopupOpen && togglePopup();
+
   function togglePopup() {
     if (!isPopupOpen) {
       popupBtn.classList.add("rotate-x-180");
@@ -62,7 +64,6 @@
     }
   }
 
-  const onPopupOpenScrollHandler = () => isPopupOpen && togglePopup();
   popupBtn.addEventListener("click", debounce(togglePopup, 200));
 
   // Change header color on scroll when the technology section is in view - not on desktop
