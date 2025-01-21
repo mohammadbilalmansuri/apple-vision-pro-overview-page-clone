@@ -368,8 +368,8 @@
       ScrollTrigger.create({
         trigger: "#design",
         scroller: "body",
-        start: "top bottom",
-        end: "top bottom",
+        start: "top 150%",
+        end: "top 150%",
         onEnter: async () => {
           const promises = imageUrls.map(
             (src) =>
