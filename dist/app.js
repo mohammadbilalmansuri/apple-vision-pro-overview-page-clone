@@ -577,10 +577,10 @@
 
   function initializeSectionLogic() {
     // setHeaderColorChangeAnimation();
-    setHeroVideoLoop();
-    setFoundationAndIntroAnimation();
-    setVideoHeadingsAnimation();
-    setDesignSectionCanvasAnimation();
+    // setHeroVideoLoop();
+    // setFoundationAndIntroAnimation();
+    // setVideoHeadingsAnimation();
+    // setDesignSectionCanvasAnimation();
     ScrollTrigger.refresh();
   }
 

@@ -96,7 +96,7 @@
       </header>
 
       <main class="w-full relative">
-        <section
+        <!-- <section
           id="hero"
           class="w-full h-screen relative flex flex-col items-center overflow-hidden"
         >
@@ -859,7 +859,7 @@
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/glass_side.webp"
                 alt="Apple Vision Pro Glass Side"
               />
-              <div class="w-full relative sm:col-span-2 sm:block hidden">
+              <div class="w-full relative sm:col-span-2 md:block hidden">
                 <button class="play-pause">
                   <svg viewBox="0 0 512 512" class="play-pause-icon">
                     <path
@@ -879,7 +879,7 @@
               <img
                 src="../assets/images/glass_startframe.jpg"
                 alt="Apple Vision Pro Glass Startframe"
-                class="sm:hidden"
+                class="sm:col-span-2 md:hidden"
               />
             </div>
 
@@ -918,26 +918,24 @@
               </button>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <section
           id="technology"
-          class="w-full relative flex flex-col items-center bg-black"
+          class="w-full relative flex flex-col items-center bg-black text-white"
         >
           <div
-            class="w-full relative flex flex-col items-center gap-40 px-5 py-40"
+            class="w-full relative flex flex-col items-center xl:py-36 lg:py-32 md:py-28 sm:py-24 py-20 xl:gap-36 lg:gap-32 md:gap-28 sm:gap-24 gap-20"
           >
             <div
-              class="w-full max-w-5xl relative flex flex-col items-center text-center gap-16"
+              class="w-full max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-12 lg:gap-10 md:gap-8 sm:gap-6 gap-4"
             >
-              <h5 class="text-2xl font-bold leading-none text-white">
-                Technology
-              </h5>
-              <h2 class="text-1 -mt-10 max-w-screen-md text-white">
+              <h5 class="text-5">Technology</h5>
+              <h2 class="text-1 xl:-mt-8 lg:-mt-6 md:-mt-4 sm:-mt-2">
                 Innovation you can see, hear, and feel.
               </h2>
               <p
-                class="max-w-screen-md text-2xl font-semibold leading-snug text-gray tracking-[0.015em]"
+                class="xl:max-w-3xl max-w-2xl xl:text-[24px] md:text-[21px] text-[19px] font-semibold leading-snug text-gray tracking-[0.01em]"
               >
                 <span class="text-white"
                   >Pushing boundaries from the inside out.</span
@@ -950,18 +948,16 @@
                 cameras and sensors. All the elements work together to create an
                 unprecedented experience you have to see to believe.
               </p>
+            </div>
 
-              <img
-                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/display.webp"
-                alt="Display"
-                class="w-full my-10"
-              />
+            <div
+              class="w-full max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
+            >
+              <img src="../assets/images/display.png" alt="Display" />
 
-              <h3 class="text-4 text-white">
-                More pixels than a 4K TV. For each eye.
-              </h3>
+              <h3 class="text-4">More pixels than a 4K TV. For each eye.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full max-w-screen-sm -mt-6"
+                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 The
                 <span class="text-white">custom micro-OLED display system</span>
@@ -972,21 +968,29 @@
             </div>
 
             <div
-              class="w-full px-10 relative flex flex-col items-center -mt-20"
+              class="w-full lg:px-10 relative flex flex-col items-center -mt-10"
             >
               <video
                 src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/spatial-audio.mp4"
                 muted
                 autoplay
                 preload="auto"
-                class="w-full"
+                class="md:block hidden"
               ></video>
 
-              <div class="w-full max-w-5xl flex flex-col items-end -mt-60 px-5">
+              <img
+                src="../assets/images/spatial_audio.jpg"
+                alt=" Spatial Audio"
+                class="md:hidden"
+              />
+
+              <div
+                class="w-full max-w-5xl flex flex-col md:items-end items-center xl:-mt-52 lg:-mt-40 md:-mt-28 px-5"
+              >
                 <div
-                  class="w-full max-w-screen-xs pl-20 relative flex flex-col gap-10"
+                  class="w-full md:max-w-[400px] max-w-lg relative flex flex-col md:items-start md:text-left items-center text-center xl:gap-8 lg:gap-7 md:gap-6 sm:gap-5 gap-4"
                 >
-                  <h3 class="text-4 text-white">
+                  <h3 class="text-4">
                     Our most advanced Spatial Audio system ever.
                   </h3>
                   <p class="text-gray text-6 font-semibold">
@@ -1006,19 +1010,16 @@
             </div>
 
             <div
-              class="w-full max-w-5xl relative flex flex-col items-center gap-16 text-center"
+              class="w-full max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
             >
               <img
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/eye_tracking.webp"
                 alt="Eye Tracing"
-                class="w-full"
               />
 
-              <h3 class="text-4 text-white">
-                Responsive, precision eye tracking.
-              </h3>
+              <h3 class="text-4">Responsive, precision eye tracking.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full max-w-screen-sm -mt-6"
+                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 A high-performance eye-tracking system of
                 <span class="text-white">LEDs</span> and
@@ -1031,17 +1032,16 @@
             </div>
 
             <div
-              class="w-full max-w-5xl relative flex flex-col items-center gap-16 text-center"
+              class="w-full max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
             >
               <img
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/sensors.webp"
                 alt="All Sensors"
-                class="w-full"
               />
 
-              <h3 class="text-4 text-white">A sophisticated sensor array.</h3>
+              <h3 class="text-4">A sophisticated sensor array.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full max-w-screen-sm -mt-6"
+                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 A pair of
                 <span class="text-white">high-resolution cameras</span> transmit
@@ -1055,19 +1055,16 @@
             </div>
 
             <div
-              class="w-full max-w-screen-xl relative flex flex-col items-center gap-20 text-center"
+              class="w-full xl:max-w-[1500px] max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
             >
               <img
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/sensors_chips.webp"
-                alt="Sensors Chips"
-                class="w-full"
+                alt="Sensors and Chips"
               />
 
-              <h3 class="text-4 text-white max-w-screen-xs">
-                Revolutionary dual-chip performance.
-              </h3>
+              <h3 class="text-4">Revolutionary dual-chip performance.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full max-w-screen-sm -mt-10"
+                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 A unique dual-chip design enables the spatial experiences on
                 Apple Vision Pro. The powerful
@@ -1080,22 +1077,11 @@
                 within 12 milliseconds — for a virtually lag-free, real-time
                 view of the world.
               </p>
-
-              <button
-                class="btn bg-white hover:bg-white/90 text-black-2 fill-black-2"
-              >
-                <svg viewBox="0 0 448 512" class="size-5">
-                  <path
-                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"
-                  />
-                </svg>
-                <span>Learn more about technology</span>
-              </button>
             </div>
           </div>
         </section>
 
-        <section id="values" class="w-full relative flex flex-col items-center">
+        <!-- <section id="values" class="w-full relative flex flex-col items-center">
           <div
             class="w-full max-w-5xl relative py-40 px-5 flex flex-col items-center text-center gap-12"
           >
@@ -1217,7 +1203,7 @@
               </a>
             </div>
           </div>
-        </section>
+        </section> -->
       </main>
 
       <footer class="w-full relative flex flex-col items-center bg-gray-2">
