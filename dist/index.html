@@ -96,7 +96,7 @@
       </header>
 
       <main class="w-full relative">
-        <!-- <section
+        <section
           id="hero"
           class="w-full h-screen relative flex flex-col items-center overflow-hidden"
         >
@@ -240,7 +240,7 @@
               <video
                 id="intro-video"
                 src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/intro.mp4"
-                class="xl:w-full lg:max-w-4xl md:max-w-2xl sm:max-w-lg xs:max-w-sm object-contain"
+                class="w-full xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-lg object-contain"
                 muted
                 preload="auto"
               ></video>
@@ -918,7 +918,7 @@
               </button>
             </div>
           </div>
-        </section> -->
+        </section>
 
         <section
           id="technology"
@@ -931,11 +931,13 @@
               class="w-full max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-12 lg:gap-10 md:gap-8 sm:gap-6 gap-4"
             >
               <h5 class="text-5">Technology</h5>
-              <h2 class="text-1 xl:-mt-8 lg:-mt-6 md:-mt-4 sm:-mt-2">
+              <h2
+                class="xl:max-w-3xl md:max-w-2xl max-w-lg text-1 xl:-mt-8 lg:-mt-6 md:-mt-4 sm:-mt-2"
+              >
                 Innovation you can see, hear, and feel.
               </h2>
               <p
-                class="xl:max-w-3xl max-w-2xl xl:text-[24px] md:text-[21px] text-[19px] font-semibold leading-snug text-gray tracking-[0.01em]"
+                class="xl:max-w-3xl md:max-w-2xl max-w-lg xl:text-[24px] md:text-[21px] text-[19px] font-semibold leading-snug text-gray tracking-[0.01em]"
               >
                 <span class="text-white"
                   >Pushing boundaries from the inside out.</span
@@ -953,11 +955,15 @@
             <div
               class="w-full max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
             >
-              <img src="../assets/images/display.png" alt="Display" />
+              <img
+                src="../assets/images/display.png"
+                alt="Display"
+                class="w-full xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-lg"
+              />
 
               <h3 class="text-4">More pixels than a 4K TV. For each eye.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
+                class="text-6 font-semibold text-gray w-full md:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 The
                 <span class="text-white">custom micro-OLED display system</span>
@@ -968,7 +974,7 @@
             </div>
 
             <div
-              class="w-full lg:px-10 relative flex flex-col items-center -mt-10"
+              class="w-full lg:px-10 relative flex flex-col items-center md:gap-0 gap-4 lg:-mt-10 md:-mt-8 sm:-mt-7 xs:-mt-5 -mt-4"
             >
               <video
                 src="https://res.cloudinary.com/samaxy/video/upload/applevisionpro/videos/spatial-audio.mp4"
@@ -990,7 +996,7 @@
                 <div
                   class="w-full md:max-w-[400px] max-w-lg relative flex flex-col md:items-start md:text-left items-center text-center xl:gap-8 lg:gap-7 md:gap-6 sm:gap-5 gap-4"
                 >
-                  <h3 class="text-4">
+                  <h3 class="text-4 xs:max-w-fit max-w-xs">
                     Our most advanced Spatial Audio system ever.
                   </h3>
                   <p class="text-gray text-6 font-semibold">
@@ -1015,11 +1021,12 @@
               <img
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/eye_tracking.webp"
                 alt="Eye Tracing"
+                class="w-full xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-lg"
               />
 
               <h3 class="text-4">Responsive, precision eye tracking.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
+                class="text-6 font-semibold text-gray w-full md:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 A high-performance eye-tracking system of
                 <span class="text-white">LEDs</span> and
@@ -1037,11 +1044,12 @@
               <img
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/sensors.webp"
                 alt="All Sensors"
+                class="w-full xl:max-w-full lg:max-w-3xl md:max-w-2xl max-w-lg"
               />
 
               <h3 class="text-4">A sophisticated sensor array.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
+                class="text-6 font-semibold text-gray w-full md:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 A pair of
                 <span class="text-white">high-resolution cameras</span> transmit
@@ -1055,7 +1063,7 @@
             </div>
 
             <div
-              class="w-full xl:max-w-[1500px] max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
+              class="w-full 2xl:max-w-[1400px] max-w-5xl relative px-5 flex flex-col items-center text-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 gap-10"
             >
               <img
                 src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/sensors_chips.webp"
@@ -1064,7 +1072,7 @@
 
               <h3 class="text-4">Revolutionary dual-chip performance.</h3>
               <p
-                class="text-6 font-semibold text-gray w-full sm:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
+                class="text-6 font-semibold text-gray w-full md:max-w-screen-sm max-w-lg xl:-mt-10 lg:-mt-9 md:-mt-8 sm:-mt-7 -mt-6"
               >
                 A unique dual-chip design enables the spatial experiences on
                 Apple Vision Pro. The powerful
@@ -1081,16 +1089,18 @@
           </div>
         </section>
 
-        <!-- <section id="values" class="w-full relative flex flex-col items-center">
+        <section id="values" class="w-full relative flex flex-col items-center">
           <div
-            class="w-full max-w-5xl relative py-40 px-5 flex flex-col items-center text-center gap-12"
+            class="w-full max-w-5xl relative flex flex-col items-center text-center xl:py-36 lg:py-32 md:py-28 sm:py-24 py-20 xl:gap-12 lg:gap-10 md:gap-8 sm:gap-6 gap-4 px-5"
           >
-            <h5 class="text-2xl font-bold leading-none">Values</h5>
-            <h2 class="text-1 -mt-7 max-w-screen-md">
+            <h5 class="text-5">Values</h5>
+            <h2
+              class="xl:max-w-3xl md:max-w-2xl max-w-lg text-1 xl:-mt-8 lg:-mt-6 md:-mt-4 sm:-mt-2"
+            >
               Designed to make a difference.
             </h2>
             <p
-              class="max-w-screen-md px-5 text-2xl font-semibold leading-snug text-gray tracking-[0.015em]"
+              class="md:max-w-2xl max-w-lg xl:text-[24px] md:text-[21px] text-[19px] font-semibold leading-snug text-gray tracking-[0.01em]"
             >
               <span class="text-black-2">Our values lead the way.</span>
               Apple Vision Pro was designed to help protect your privacy and
@@ -1099,7 +1109,7 @@
             </p>
 
             <button
-              class="btn bg-orange hover:bg-orange/90 text-white fill-white"
+              class="btn bg-orange hover:bg-orange/90 text-white fill-white mt-4"
             >
               <svg viewBox="0 0 448 512" class="size-5">
                 <path
@@ -1111,104 +1121,133 @@
           </div>
 
           <div
-            class="w-full 2xl:max-w-screen-2xl xl:max-w-screen-xl max-w-5xl px-5 flex flex-col items-center gap-10 relative"
+            class="w-full xl:px-14 lg:px-12 md:px-10 xs:px-8 px-5 flex flex-col items-center lg:gap-10 md:gap-8 gap-5 relative lg:pb-10 md:pb-8 pb-5"
           >
-            <div class="w-full bg-gray-2 flex gap-24 items-center px-52">
-              <div class="w-[45%] flex flex-col gap-5">
-                <img
-                  class="size-[3.25rem]"
-                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/ar_logo.webp"
-                  alt="AR Logo"
-                />
-                <h2 class="text-2 font-semibold">
-                  Use AR to view Apple Vision Pro.
-                </h2>
-                <p
-                  class="text-2xl font-semibold leading-snug tracking-[0.015em] text-gray"
+            <div
+              class="w-full sm:max-w-fit max-w-full bg-gray-2 flex flex-col items-center xl:px-18 lg:px-16 md:px-14 sm:px-12 px-10 sm:pt-0 pt-10"
+            >
+              <div
+                class="w-full xl:max-w-5xl flex sm:flex-row flex-col items-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 xs:gap-10 gap-8"
+              >
+                <div
+                  class="lg:w-[45%] sm:w-1/2 flex flex-col lg:gap-5 md:gap-4 gap-3 sm:items-start items-center sm:text-left text-center"
                 >
-                  Open this page using Safari on your iPhone or iPad.
-                </p>
-              </div>
+                  <img
+                    class="xl:size-14 lg:size-12 size-10"
+                    src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/ar_logo.webp"
+                    alt="AR Logo"
+                  />
+                  <h2 class="text-2 font-semibold sm:max-w-full max-w-xs">
+                    Use AR to view Apple Vision Pro.
+                  </h2>
+                  <p
+                    class="text-8 text-gray lg:max-w-sm sm:max-w-xs max-w-60 -mt-1"
+                  >
+                    Open this page using Safari on your iPhone or iPad.
+                  </p>
+                </div>
 
-              <div class="w-[55%] pt-40">
-                <img
-                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/ar_tile.webp"
-                  alt="AR Tile"
-                  class="w-full"
-                />
-              </div>
-            </div>
-
-            <div class="w-full bg-gray-2 flex gap-24 items-center px-52 py-40">
-              <div class="w-[45%] flex flex-col gap-5">
-                <h2 class="text-2 font-semibold">
-                  Explore Apple Vision Pro accessories.
-                </h2>
-                <a
-                  href="https://www.apple.com/us/shop/goto/vision/accessories"
-                  class="text-2xl group leading-snug tracking-[0.015em] text-blue flex gap-1 items-center"
+                <div
+                  class="lg:w-[55%] sm:w-1/2 sm:max-w-full max-w-xs xl:pt-18 lg:pt-16 md:pt-14 sm:pt-12"
                 >
-                  <span class="group-hover:underline">Shop</span>
-                  <svg viewBox="0 0 320 512" class="size-4 fill-blue">
-                    <path
-                      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
-                    />
-                  </svg>
-                </a>
-              </div>
-
-              <div class="w-[55%]">
-                <img
-                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/accessories.webp"
-                  alt="Accessories"
-                  class="w-full"
-                />
+                  <img
+                    src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/ar_tile.webp"
+                    alt="AR Tile"
+                    class="w-full"
+                  />
+                </div>
               </div>
             </div>
 
             <div
-              class="w-full bg-gray-2 flex flex-col gap-5 items-center text-center py-40 mb-10"
+              class="w-full sm:max-w-fit max-w-full bg-gray-2 flex flex-col items-center xl:p-18 lg:p-16 md:p-14 sm:p-12 p-10"
             >
-              <img
-                src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/developers.webp"
-                alt="Accessories"
-                class="w-full max-w-screen-sm px-10 py-5"
-              />
-              <h2 class="text-2 font-semibold">
-                An all-new platform.<br />An all-new world for developers.
-              </h2>
-              <p
-                class="text-2xl leading-snug tracking-[0.015em] max-w-5xl px-16"
+              <div
+                class="w-full xl:max-w-5xl flex sm:flex-row flex-col items-center xl:gap-18 lg:gap-16 md:gap-14 sm:gap-12 xs:gap-10 gap-8"
               >
-                The possibilities for what developers can dream up and build for
-                Apple Vision Pro are endless. And with familiar tools and
-                frameworks like Xcode, SwiftUI, RealityKit, and ARKit, as well
-                as support for Unity and the 3D-content preparation app Reality
-                Composer Pro, developers have everything they need to create
-                amazing spatial experiences.
-              </p>
-              <a
-                href="https://www.apple.com/us/shop/goto/vision/accessories"
-                class="text-2xl group leading-snug tracking-[0.015em] text-blue flex gap-1 items-center"
-              >
-                <span class="group-hover:underline"
-                  >Learn more about developing for visionOS</span
+                <div
+                  class="sm:w-[45%] flex flex-col lg:gap-5 gap-4 sm:items-start items-center sm:text-left text-center"
                 >
+                  <h2 class="text-2 font-semibold sm:max-w-full max-w-xs">
+                    Explore Apple Vision Pro accessories.
+                  </h2>
+                  <a
+                    href="https://www.apple.com/us/shop/goto/vision/accessories"
+                    class="text-8 text-blue group flex items-center gap-1.5 -mt-1"
+                  >
+                    <span class="group-hover:underline">Shop</span>
+                    <svg
+                      viewBox="0 0 448 512"
+                      class="lg:size-5 sm:size-4 size-3.5 fill-blue"
+                    >
+                      <path
+                        d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+                      />
+                    </svg>
+                  </a>
+                </div>
 
-                <svg viewBox="0 0 448 512" class="size-5 fill-blue -rotate-45">
-                  <path
-                    d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                <div class="sm:w-[55%] sm:max-w-full max-w-xs">
+                  <img
+                    src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/accessories.webp"
+                    alt="AR Tile"
+                    class="w-full"
                   />
-                </svg>
-              </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="w-full lg:max-w-fit max-w-full bg-gray-2 flex flex-col items-center xl:p-18 lg:p-16 md:p-14 sm:p-12 p-10"
+            >
+              <div
+                class="lg:w-[1024px] w-full flex flex-col items-center text-center lg:gap-5 gap-4"
+              >
+                <img
+                  src="https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/developers.webp"
+                  alt="AR Tile"
+                  class="w-full xl:max-w-lg lg:max-w-md md:max-w-sm max-w-xs"
+                />
+                <h2
+                  class="text-2 font-semibold sm:max-w-full max-w-xs lg:mt-5 mt-3"
+                >
+                  An all-new platform.<br />An all-new world for developers.
+                </h2>
+                <p
+                  class="text-8 xl:max-w-4xl lg:max-w-2xl md:max-w-xl sm:max-w-lg max-w-xs -mt-1"
+                >
+                  The possibilities for what developers can dream up and build
+                  for Apple Vision Pro are endless. And with familiar tools and
+                  frameworks like Xcode, SwiftUI, RealityKit, and ARKit, as well
+                  as support for Unity and the 3D-content preparation app
+                  Reality Composer Pro, developers have everything they need to
+                  create amazing spatial experiences.
+                </p>
+                <a
+                  href="https://developer.apple.com/visionos/"
+                  class="text-8 text-blue group flex items-center gap-1.5 -mt-1"
+                >
+                  <span class="group-hover:underline"
+                    >Learn more about developing for visionOS</span
+                  >
+                  <svg
+                    viewBox="0 0 448 512"
+                    class="lg:size-5 sm:size-4 size-3.5 fill-blue -rotate-45 sm:block hidden"
+                  >
+                    <path
+                      d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
-        </section> -->
+        </section>
       </main>
 
       <footer class="w-full relative flex flex-col items-center bg-gray-2">
         <div class="w-full max-w-5xl p-5 pb-4 relative flex flex-col gap-2">
-          <ol class="flex flex-col gap-2 list-decimal text-gray pl-5">
+          <ol class="flex flex-col gap-2 list-decimal text-gray pl-3.5">
             <li class="text-xs font-text">
               Testing conducted by Apple in November 2023 using preproduction
               Apple Vision Pro units and software. Testing consisted of full

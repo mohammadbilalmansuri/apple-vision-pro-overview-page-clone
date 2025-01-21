@@ -68,7 +68,7 @@
   }
 
   .text-2 {
-    @apply xl:text-[56px] lg:text-[50px] md:text-[44px] sm:text-[38px] text-[32px] leading-tight lg:tracking-[0.01em] font-semibold;
+    @apply xl:text-[50px] lg:text-[44px] md:text-[38px] text-[28px] leading-tight lg:tracking-[0.01em] font-semibold;
   }
 
   .text-3 {
@@ -88,7 +88,11 @@
   }
 
   .text-7 {
-    @apply lg:text-[20px] text-[18px] leading-tight lg:tracking-[0.01em];
+    @apply lg:text-[20px] sm:text-[18px] text-[17px] sm:font-display font-text leading-tight lg:tracking-[0.01em];
+  }
+
+  .text-8 {
+    @apply lg:text-[24px] md:text-[21px] sm:text-[19px] text-[17px] leading-snug lg:tracking-[0.01em] sm:font-display font-text;
   }
 
   .btn {
