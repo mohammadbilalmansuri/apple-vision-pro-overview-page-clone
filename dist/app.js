@@ -414,7 +414,7 @@
           scrollTrigger: {
             trigger: "#design-main",
             scroller: "body",
-            start: "top bottom",
+            start: "top 75%",
             end: `top ${headerHeight}`,
             scrub: true,
             onUpdate: () => requestAnimationFrame(render),
