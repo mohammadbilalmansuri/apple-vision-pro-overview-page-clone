@@ -358,7 +358,7 @@
       const imageUrls = Array.from(
         { length: 198 },
         (_, i) =>
-          `https://res.cloudinary.com/samaxy/image/upload/applevisionpro/images/design/${i}.webp`
+          `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737446593/applevisionpro/images/canvas/${i}.webp`
       );
 
       const images = new Map();

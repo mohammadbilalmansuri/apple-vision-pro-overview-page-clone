@@ -2,38 +2,38 @@
 @layer base {
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-display-regular.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737446427/applevisionpro/fonts/sf-pro-display-regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-display-semibold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737446434/applevisionpro/fonts/sf-pro-display-semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Display";
-    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-display-bold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737446427/applevisionpro/fonts/sf-pro-display-bold.woff2");
     font-weight: 700;
     font-style: normal;
   }
 
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-text-light.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737446435/applevisionpro/fonts/sf-pro-text-light.woff2");
     font-weight: 300;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-text-regular.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737446435/applevisionpro/fonts/sf-pro-text-regular.woff2");
     font-weight: 400;
     font-style: normal;
   }
   @font-face {
     font-family: "SF Pro Text";
-    src: url("https://res.cloudinary.com/samaxy/raw/upload/applevisionpro/fonts/sf-pro-text-semibold.woff2");
+    src: url("https://res.cloudinary.com/mohammadbilalmansuri/raw/upload/v1737446436/applevisionpro/fonts/sf-pro-text-semibold.woff2");
     font-weight: 600;
     font-style: normal;
   }
