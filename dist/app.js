@@ -17,6 +17,7 @@
     };
   }
 
+  const mediaQuery = window.matchMedia("(min-width: 1240px)");
   const header = document.querySelector("header");
   let headerHeight = header.offsetHeight;
   const popupBtn = document.getElementById("popup-btn");
@@ -64,26 +65,18 @@
   const onPopupOpenScrollHandler = () => isPopupOpen && togglePopup();
   popupBtn.addEventListener("click", debounce(togglePopup, 200));
 
-  // NOT CALLED
+  // Change header color on scroll when the technology section is in view - not on desktop
   function setHeaderColorChangeAnimation() {
+    if (mediaQuery.matches) return;
     ScrollTrigger.create({
       trigger: "#technology",
       scroller: "body",
       start: `top ${headerHeight}`,
       end: "bottom top",
-      markers: true,
-      onEnter: () => {
-        document.documentElement.classList.add("dark");
-      },
-      onLeaveBack: () => {
-        document.documentElement.classList.remove("dark");
-      },
-      onEnterBack: () => {
-        document.documentElement.classList.add("dark");
-      },
-      onLeave: () => {
-        document.documentElement.classList.remove("dark");
-      },
+      onEnter: () => document.documentElement.classList.add("dark"),
+      onLeaveBack: () => document.documentElement.classList.remove("dark"),
+      onEnterBack: () => document.documentElement.classList.add("dark"),
+      onLeave: () => document.documentElement.classList.remove("dark"),
     });
   }
 
@@ -141,8 +134,6 @@
       toggleVideoPlayPause(video, video.paused, button);
     });
   });
-
-  const mediaQuery = window.matchMedia("(min-width: 1240px)");
 
   // Hero Section Vide
   function setHeroVideoLoop() {
@@ -551,40 +542,34 @@
         });
 
       let lastWidth = window.innerWidth;
-      const resizeObserver = new ResizeObserver(() => {
+      new ResizeObserver(
         debounce(() => {
+          if (!mediaQuery.matches) return;
           const currentWidth = window.innerWidth;
           if (lastWidth !== currentWidth) {
             lastWidth = currentWidth;
             setCanvasSize();
             requestAnimationFrame(render);
-            console.log("Resized");
           }
-        }, 50);
-      });
-
-      resizeObserver.observe(canvas);
-    } else {
-      const canvas = document.getElementById("design-canvas");
-      if (canvas) {
-        const resizeObserver = new ResizeObserver(() => {
-          console.log("Resized");
-        });
-        resizeObserver.unobserve(canvas);
-      }
+        }, 50)
+      ).observe(document.body);
     }
   }
 
+  // Initialize All Section Logic
   function initializeSectionLogic() {
-    // setHeaderColorChangeAnimation();
-    // setHeroVideoLoop();
-    // setFoundationAndIntroAnimation();
-    // setVideoHeadingsAnimation();
-    // setDesignSectionCanvasAnimation();
+    setHeaderColorChangeAnimation();
+    setHeroVideoLoop();
+    setFoundationAndIntroAnimation();
+    setVideoHeadingsAnimation();
+    setDesignSectionCanvasAnimation();
     ScrollTrigger.refresh();
   }
 
-  const reset = () => {
+  initializeSectionLogic();
+
+  // Reinitialize section logic on media query change
+  mediaQuery.addEventListener("change", () => {
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     document
       .querySelectorAll(".pin-spacer")
@@ -595,8 +580,5 @@
     headerHeight = header.offsetHeight;
     ScrollTrigger.refresh();
     initializeSectionLogic();
-  };
-
-  mediaQuery.addEventListener("change", reset);
-  initializeSectionLogic();
+  });
 })();
