@@ -50,7 +50,7 @@
       headerDiv.classList.remove(
         "bg-gray-3/80",
         "dark:bg-black/80",
-        "shadow-sm"
+        "shadow-sm",
       );
 
       gsap.to(headerDiv, {
@@ -117,13 +117,13 @@
       playVideo(videoElement);
       buttonSvgPath.setAttribute(
         "d",
-        "M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24z"
+        "M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm224-72l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24zm112 0l0 144c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-144c0-13.3 10.7-24 24-24s24 10.7 24 24z",
       );
     } else {
       videoElement.pause();
       buttonSvgPath.setAttribute(
         "d",
-        "M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z"
+        "M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zM188.3 147.1c7.6-4.2 16.8-4.1 24.3 .5l144 88c7.1 4.4 11.5 12.1 11.5 20.5s-4.4 16.1-11.5 20.5l-144 88c-7.4 4.5-16.7 4.7-24.3 .5s-12.3-12.2-12.3-20.9l0-176c0-8.7 4.7-16.7 12.3-20.9z",
       );
     }
   }
@@ -160,13 +160,13 @@
           toggleVideoPlayPause(
             foundationVideo,
             true,
-            foundationPlayPauseButton
+            foundationPlayPauseButton,
           ),
         onLeaveBack: () =>
           toggleVideoPlayPause(
             foundationVideo,
             false,
-            foundationPlayPauseButton
+            foundationPlayPauseButton,
           ),
       });
 
@@ -183,13 +183,13 @@
               toggleVideoPlayPause(
                 foundationVideo,
                 false,
-                foundationPlayPauseButton
+                foundationPlayPauseButton,
               ),
             onEnterBack: () =>
               toggleVideoPlayPause(
                 foundationVideo,
                 true,
-                foundationPlayPauseButton
+                foundationPlayPauseButton,
               ),
           },
         })
@@ -227,25 +227,25 @@
           toggleVideoPlayPause(
             foundationVideo,
             true,
-            foundationPlayPauseButton
+            foundationPlayPauseButton,
           ),
         onLeaveBack: () =>
           toggleVideoPlayPause(
             foundationVideo,
             false,
-            foundationPlayPauseButton
+            foundationPlayPauseButton,
           ),
         onLeave: () =>
           toggleVideoPlayPause(
             foundationVideo,
             false,
-            foundationPlayPauseButton
+            foundationPlayPauseButton,
           ),
         onEnterBack: () =>
           toggleVideoPlayPause(
             foundationVideo,
             true,
-            foundationPlayPauseButton
+            foundationPlayPauseButton,
           ),
       });
 
@@ -263,7 +263,7 @@
 
     const video = document.querySelector(`${sectionSelector} video`);
     const playPauseButton = document.querySelector(
-      `${sectionSelector} .play-pause`
+      `${sectionSelector} .play-pause`,
     );
 
     if (mediaQuery.matches) {
@@ -290,7 +290,7 @@
       });
 
       const videoText = document.querySelector(
-        `${sectionSelector} .video-text`
+        `${sectionSelector} .video-text`,
       );
       if (videoText) {
         gsap.to(videoText, {
@@ -359,7 +359,7 @@
       const imageUrls = Array.from(
         { length: 198 },
         (_, i) =>
-          `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737446593/applevisionpro/images/canvas/${i}.webp`
+          `https://res.cloudinary.com/mohammadbilalmansuri/image/upload/v1737446593/applevisionpro/images/canvas/${i}.webp`,
       );
 
       const images = new Map();
@@ -377,7 +377,7 @@
                 const img = new Image();
                 img.src = src;
                 img.onload = () => resolve(img);
-              })
+              }),
           );
 
           const loadedImages = await Promise.all(promises);
@@ -405,7 +405,7 @@
           offsetX,
           0,
           img.width * ratio,
-          canvas.height
+          canvas.height,
         );
       }
 
@@ -472,7 +472,7 @@
             zIndex: 2,
             opacity: 1,
           },
-          "+=300%"
+          "+=300%",
         )
         .to("#design-texts p:nth-child(2)", {
           y: -100,
@@ -487,7 +487,7 @@
             zIndex: 2,
             opacity: 1,
           },
-          "+=200%"
+          "+=200%",
         )
         .to("#design-texts p:nth-child(3)", {
           y: -150,
@@ -502,7 +502,7 @@
             zIndex: 2,
             opacity: 1,
           },
-          "+=400%"
+          "+=400%",
         )
         .to("#design-texts p:nth-child(4)", {
           y: -100,
@@ -517,7 +517,7 @@
             zIndex: 2,
             opacity: 1,
           },
-          "+=100%"
+          "+=100%",
         )
         .to("#design-texts p:nth-child(5)", {
           y: -100,
@@ -532,7 +532,7 @@
             zIndex: 2,
             opacity: 1,
           },
-          "+=100%"
+          "+=100%",
         )
         .to("#design-texts p:nth-child(6)", {
           y: -100,
@@ -552,7 +552,7 @@
             setCanvasSize();
             requestAnimationFrame(render);
           }
-        }, 50)
+        }, 50),
       ).observe(document.body);
     }
   }
